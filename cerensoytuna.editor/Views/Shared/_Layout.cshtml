@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="~/images/favicon.png" type="image/png">
+
+    <title>Bracket Responsive Bootstrap3 Admin</title>
+
+    <link href="~/css/style.default.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <section>
+
+        <div class="leftpanel">
+
+            <div class="logopanel">
+                <h1><span>[</span> yönetim paneli <span>]</span></h1>
+            </div><!-- logopanel -->
+
+            <div class="leftpanelinner">
+
+                <!-- This is only visible to small devices -->
+                <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                    <div class="media userlogged">
+                        <img alt="" src="~/images/photos/loggeduser.png" class="media-object">
+                        <div class="media-body">
+                            <h4>Admin</h4>
+                            <span>"Hoşgeldiniz..."</span>
+                        </div>
+                    </div>
+
+                    <h5 class="sidebartitle actitle">Hesabım</h5>
+                    <ul class="nav nav-pills nav-stacked nav-bracket mb30">
+                        <li><a href="profile.html"><i class="fa fa-user"></i> <span>Profilim</span></a></li>
+                        <li><a href=""><i class="fa fa-cog"></i> <span>Ayarlar</span></a></li>
+                        <li><a href="signout.html"><i class="fa fa-sign-out"></i> <span>Çıkış Yap</span></a></li>
+                    </ul>
+                </div>
+
+                <h5 class="sidebartitle">Yönetim</h5>
+                <ul class="nav nav-pills nav-stacked nav-bracket">
+                    <li class="active"><a href="/yonetim/anasayfa"><i class="fa fa-home"></i> <span>Başlangıç</span></a></li>
+                    <li class="nav-parent">
+                        <a href=""><i class="fa fa-user"></i> <span>Hesap</span></a>
+                        <ul class="children">
+                            <li><a href="/hesap/kullanicilar"><i class="fa fa-caret-right"></i> Kullanıcı</a></li>
+                            <li><a href="/hesap/roller"><i class="fa fa-caret-right"></i> Rol</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-parent">
+                        <a href=""><i class="fa fa-edit"></i> <span>İşlem Ayarları</span></a>
+                        <ul class="children">
+                            <li><a href="/gonderi/gonderiler"><i class="fa fa-caret-right"></i> İşlem Listesi</a></li>
+                            <li><a href="/gonderi/gonderiolustur"><i class="fa fa-caret-right"></i> İşlem Ekle</a></li>
+                            <li><a href="/gonderi/etiketler"><i class="fa fa-caret-right"></i> Etiketler</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/yonetim/ayarlar"><i class="fa fa-cogs"></i> <span>Ayarlar</span></a></li>
+
+                    <li><a href="/yonetim/cikisyap"><i class="fa fa-sign-out"></i> <span>Çıkış Yap</span></a></li>
+
+                </ul>
+
+            </div><!-- leftpanelinner -->
+        </div><!-- leftpanel -->
+
+        <div class="mainpanel">
+
+            <div class="headerbar">
+
+                <a class="menutoggle"><i class="fa fa-bars"></i></a>
+
+                <form class="searchform" action="index.html" method="post">
+                    <input type="text" class="form-control" name="keyword" placeholder="Burada aratın..." />
+                </form>
+
+                <div class="header-right">
+                    <ul class="headermenu">
+
+                        <li>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <img src="~/images/photos/loggeduser.png" alt="" />
+                                    Admin
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                                    <li><a href="profile.html"><i class="glyphicon glyphicon-user"></i>Profilim</a></li>
+                                    <li><a href="#"><i class="glyphicon glyphicon-cog"></i>Ayarlar</a></li>
+                                    <li><a href="signin.html"><i class="glyphicon glyphicon-log-out"></i>Çıkış Yap</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div><!-- header-right -->
+
+            </div><!-- headerbar -->
+
+            <div class="pageheader">
+                <h2><i class="fa fa-home"></i> Yönetim</h2>
+                <div class="breadcrumb-wrapper">
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Yönetim</a></li>
+                        <li class="active">Ana Sayfa</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="contentpanel">
+
+                @RenderBody()
+
+            </div><!-- contentpanel -->
+
+        </div><!-- mainpanel -->
+
+    </section>
+
+
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/js/jquery-ui-1.10.3.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/modernizr.min.js"></script>
+    <script src="~/js/jquery.sparkline.min.js"></script>
+    <script src="~/js/toggles.min.js"></script>
+    <script src="~/js/retina.min.js"></script>
+    <script src="~/js/jquery.cookies.js"></script>
+    <script src="~/js/flot/jquery.flot.min.js"></script>
+    <script src="~/js/flot/jquery.flot.resize.min.js"></script>
+    <script src="~/js/flot/jquery.flot.spline.min.js"></script>
+    <script src="~/js/morris.min.js"></script>
+    <script src="~/js/raphael-2.1.0.min.js"></script>
+    <script src="~/js/select2.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/dashboard.js"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

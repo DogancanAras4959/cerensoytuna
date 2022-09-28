@@ -1,0 +1,110 @@
+﻿@model cerensoytuna.editor.Models.UserModel.LoginViewModel
+@{
+    Layout = null;
+    var returnUrl = ViewData["returnUrl"] as string;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="~/images/favicon.png" type="image/png">
+
+    <title>Bracket Responsive Bootstrap3 Admin</title>
+
+    <link href="~/css/style.default.css" rel="stylesheet">
+
+</head>
+
+<body class="signin">
+
+    <section>
+        <div class="signinpanel">
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+
+
+                </div><!-- col-sm-7 -->
+
+                <div class="col-md-6">
+                    <div class="signin-info">
+                        <div class="logopanel">
+                            <h1><span>[</span> Dr. Ceren Soytuna Yönetim <span>]</span></h1>
+                        </div><!-- logopanel -->
+                    </div><!-- signin0-info -->
+                    <br />
+                    <form class="mt-4" asp-controller="hesap" asp-action="girisyap" asp-route-returnUrl="@Context.Request.Query["ReturnUrl"]">
+                        <h4 class="nomargin">Giriş Yap</h4>
+                        <p class="mt5 mb20">Hesap bilgilerinizle editöre giriş yapın</p>
+
+                        @Html.TextBoxFor(x => x.UserName, new
+                        {
+                            @type = "text",
+                            @class = "form-control uname",
+                       id = "username",
+                            placeholder = "Kullanıcı adınızı girin...",
+                            autocomplete = "off"
+                        })
+
+                        @Html.TextBoxFor(x => x.Password, new { @type = "password", @class = "form-control pword", id = "userpassword", placeholder = "Şifrenizi giriniz...", autocomplete = "off" })
+
+                        <button class="btn btn-success btn-block" type="submit">Giriş Yap</button>
+
+                    </form>
+
+                    <br />
+                    <div class="signup-footer">
+                        <div class="pull-left">
+                            &copy; 2022. Tüm Hakları Saklıdır
+                        </div>
+                        <div class="pull-right">
+                            <a href="http://ikifikir.net" target="_blank">İkifikir</a> tarafından geliştirildi
+                        </div>
+                    </div>
+                </div><!-- col-sm-5 -->
+
+                <div class="col-md-3"></div>
+            </div><!-- row -->
+
+           
+
+        </div><!-- signin -->
+
+    </section>
+
+
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/modernizr.min.js"></script>
+    <script src="~/js/jquery.sparkline.min.js"></script>
+    <script src="~/js/jquery.cookies.js"></script>
+
+    <script src="~/js/toggles.min.js"></script>
+    <script src="~/js/retina.min.js"></script>
+
+    <script src="~/js/custom.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Please do not use the code below
+            // This is for demo purposes only
+            var c = $.cookie('change-skin');
+            if (c && c == 'greyjoy') {
+                $('.btn-success').addClass('btn-orange').removeClass('btn-success');
+            } else if (c && c == 'dodgerblue') {
+                $('.btn-success').addClass('btn-primary').removeClass('btn-success');
+            } else if (c && c == 'katniss') {
+                $('.btn-success').addClass('btn-primary').removeClass('btn-success');
+            }
+        });
+    </script>
+
+</body>
+</html>

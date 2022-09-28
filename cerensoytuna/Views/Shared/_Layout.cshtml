@@ -1,0 +1,354 @@
+﻿@using cerensoytuna.Resource
+@using cerensoytuna.Models
+@inject LocalizationService localizationService
+
+@{
+    MetaViewModel meta = ViewBag.Meta as MetaViewModel;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@meta.Title</title>
+    <meta name="description" content="@meta.Description" />
+
+    <meta name="rating" content="general" />
+    <meta name="abstract" content="security" />
+    <meta name="robots" content="all" />
+    <meta name="googlebot" content="Index, Follow" />
+    <meta name="robots" content="Index, Follow" />
+    <meta name="distribution" content="global" />
+    <meta name="application-name" content="drcerensoytuna" />
+
+    <meta name="twitter:card" content="summary_larg_image" />
+    <meta name="twitter:title" content="@meta.Title" />
+    <meta name="twitter:site" content="@meta.Url" />
+    <meta name="twitter:description" content="@meta.Description" />
+    <meta name="twitter:image" content="@meta.Image" />
+    <meta name="description" content="@meta.Description" />
+    <meta name="keywords" content="@meta.Keywords" />
+
+    <meta property="article:publisher" content="https://www.twitter.com/drcerensoytuna" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="https://drcerensoytuna.com" />
+    <meta property="og:title" content="@meta.Title" />
+    <meta property="og:description" content="@meta.ogDescription" />
+    <meta property="og:image" content="@meta.ogImage" />
+    <meta property="og:url" content="@meta.Url" />
+
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="author" content="Dr. Cren Soytuna | Çocuk Sağlığı ve Hastaklıkları" />
+
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/font-export.css" rel="stylesheet" />
+    <link href="~/css/responsive.css" rel="stylesheet">
+    <link rel="icon" href="https://uploads.drcerensoytuna.com/site/favicon-dr.png" type="image/x-icon">
+
+    <style>
+        select.form-control:not([size]):not([multiple]) {
+            height: calc(2rem + 1px);
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0px 10px;
+            font-size: 15px;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-indent: 1px;
+            text-overflow: '';
+        }
+    </style>
+</head>
+<body class="boxed_wrapper">
+
+    <div class="wraper_flyout_search">
+        <div class="table">
+            <div class="table-cell">
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-layer"></div>
+                <div class="flyout-search-close">
+                    <span class="flyout-search-close-line"></span>
+                    <span class="flyout-search-close-line"></span>
+                </div>
+                <div class="flyout_search">
+                    <div class="flyout-search-title">
+                        <h4>Arama Yap</h4>
+                    </div>
+                    <div class="flyout-search-bar">
+                        <form role="search" method="get" action="#">
+                            <div class="form-row">
+                                <input type="search" placeholder="@localizationService.GetLocalizedHtmlString("Bir şeyler arayın...")" value="" name="searchkey" required="">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- search-box-layout end -->
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <div class="header-top">
+            <div class="container">
+                <div class="inner-container clearfix">
+                    <div class="social-links pull-left">
+                        <ul class="social-list">
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:05302597158">+90 0530 259 71 58</a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com/drcerensoytuna/?hl=tr"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/c/Ayd%C4%B1nlarDental"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="header-info pull-right">
+                        <ul class="info-list">
+
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@drcerensoytuna.com ">info@drcerensoytuna.com</a>
+                            </li>
+                            <li style="padding:0px;">
+                                @await Html.PartialAsync("_setLanguagePartial")
+                            </li>
+                            @*<li>
+                                    <i class="fas fa-user"></i>
+                                    <a href="#">Log in or Register</a>
+                                </li>*@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="logo-box pull-left">
+                        <figure class="logo"><a href="@Url.Action("sayfa","anasayfa")"><img style="height:80px; margin-left:27px;" src="https://uploads.drcerensoytuna.com/site/logodr.png" alt=""></a></figure>
+                    </div>
+                    <div class="nav-outer pull-right clearfix" style="position:relative; top:5px;">
+                        <div class="menu-area">
+                            <nav class="main-menu navbar-expand-lg">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="navbar-collapse collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li><a asp-area="" asp-controller="anasayfa" asp-action="sayfa">@localizationService.GetLocalizedHtmlString("ANA SAYFA")</a></li>
+                                        <li><a asp-area="" asp-controller="anasayfa" asp-action="doktorumuz">@localizationService.GetLocalizedHtmlString("DR. CEREN SOYTUNA")</a></li>
+                                        @if (localizationService.GetLocalizedHtmlString("TEDAVİLER") == "Treatments")
+                                        {
+                                            <li><a asp-area="" asp-controller="home" asp-action="treatments">Treatments</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-area="" asp-controller="anasayfa" asp-action="islemler">@localizationService.GetLocalizedHtmlString("TEDAVİLER")</a></li>
+                                        }
+
+                                        <li><a asp-area="" asp-controller="anasayfa" asp-action="hakkimizda">@localizationService.GetLocalizedHtmlString("KLİNİĞİMİZ")</a></li>
+                                        <li><a asp-area="" asp-controller="anasayfa" asp-action="iletisim">@localizationService.GetLocalizedHtmlString("İLETİŞİM")</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="outer-box">
+                            <ul class="outer-content">
+                                <li class="header-flyout-searchbar">
+                                    <i class="fa fa-search"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Sticky Header-->
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box">
+                    <a href="/anasayfa/sayfa">
+                        <img style="height:60px; padding:10px;" src="https://uploads.drcerensoytuna.com/site/logodr.png" alt="">
+                    </a>
+                </figure>
+                <div class="menu-area">
+                    <nav class="main-menu navbar-expand-lg">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix" style="position:relative; top:7px;">
+                            <ul class="navigation clearfix">
+                                <li><a asp-area="" asp-controller="anasayfa" asp-action="sayfa">@localizationService.GetLocalizedHtmlString("ANA SAYFA")</a></li>
+                                <li><a asp-area="" asp-controller="anasayfa" asp-action="doktorumuz">@localizationService.GetLocalizedHtmlString("DR. CEREN SOYTUNA")</a></li>
+                                @if (localizationService.GetLocalizedHtmlString("TEDAVİLER") == "Treatments")
+                                {
+                                    <li><a asp-area="" asp-controller="home" asp-action="treatments">Treatments</a></li>
+                                }
+                                else
+                                {
+                                    <li><a asp-area="" asp-controller="anasayfa" asp-action="islemler">@localizationService.GetLocalizedHtmlString("TEDAVİLER")</a></li>
+                                }
+                                <li><a asp-area="" asp-controller="anasayfa" asp-action="hakkimizda">@localizationService.GetLocalizedHtmlString("KLİNİĞİMİZ")</a></li>
+                                <li><a asp-area="" asp-controller="anasayfa" asp-action="iletisim">@localizationService.GetLocalizedHtmlString("İLETİŞİM")</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div><!-- sticky-header end -->
+    </header>
+
+    @RenderBody()
+
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="parallax-scene parallax-scene-2 parallax-icon">
+                <span data-depth="0.40" class="parallax-layer icon icon-1"></span>
+                <span data-depth="0.50" class="parallax-layer icon icon-2"></span>
+                <span data-depth="0.30" class="parallax-layer icon icon-3"></span>
+                <span data-depth="0.40" class="parallax-layer icon icon-4"></span>
+                <span data-depth="0.50" class="parallax-layer icon icon-5"></span>
+                <span data-depth="0.30" class="parallax-layer icon icon-6"></span>
+                <span data-depth="0.40" class="parallax-layer icon icon-7"></span>
+            </div>
+            <div class="container">
+                <div class="widget-section">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="about-widget footer-widget">
+                                <h3 class="widget-title">Dr. Ceren Soytuna</h3>
+                                <div class="widget-content">
+                                    <div class="text">
+                                        <p>@localizationService.GetLocalizedHtmlString("FOOTER METIN")</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="link-widget footer-widget">
+                                <h3 class="widget-title">@localizationService.GetLocalizedHtmlString("FOOTER BASLIK 1")</h3>
+                                <div class="widget-content">
+                                    <ul>
+                                        <li><a asp-area="" asp-controller="anasayfa" asp-action="sayfa">@localizationService.GetLocalizedHtmlString("ANA SAYFA")</a></li>
+                                        <li><a asp-area="" asp-controller="anasayfa" asp-action="doktorumuz">@localizationService.GetLocalizedHtmlString("DR. CEREN SOYTUNA")</a></li>
+                                        @if (localizationService.GetLocalizedHtmlString("TEDAVİLER") == "Treatments")
+                                        {
+                                            <li><a asp-area="" asp-controller="home" asp-action="treatments">Treatments</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-area="" asp-controller="anasayfa" asp-action="islemler">@localizationService.GetLocalizedHtmlString("TEDAVİLER")</a></li>
+                                        }
+                                        <li><a asp-area="" asp-controller="anasayfa" asp-action="hakkimizda">@localizationService.GetLocalizedHtmlString("KLİNİĞİMİZ")</a></li>
+                                        <li><a asp-area="" asp-controller="anasayfa" asp-action="iletisim">@localizationService.GetLocalizedHtmlString("İLETİŞİM")</a></li>
+                                        @*<li><a href="anasayfa/gizlilik">@localizationService.GetLocalizedHtmlString("GİZLİLİK POLİTİKASI")</a></li>
+        <li><a href="anasayfa/cerez">@localizationService.GetLocalizedHtmlString("ÇEREZ POLİTİKASI")</a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="contact-widget footer-widget">
+                                <h3 class="widget-title">@localizationService.GetLocalizedHtmlString("FOOTER BASLIK 2")</h3>
+                                <div class="widget-content">
+                                    <div class="text">@localizationService.GetLocalizedHtmlString("FOOTER METIN 2")</div>
+                                    <ul class="info-list">
+                                        <li><i class="fas fa-home"></i>Levent Mahallesi, Şakayıklı Sokak No: 7/1 Beşiktaş/İstanbul</li>
+                                        <li><i class="fas fa-phone"></i><a href="tel:05302597158">+90 0530 259 71 58</a></li>
+                                        <li><i class="fas fa-envelope"></i><a href="mailto:info@drcerensoytuna.com">info@drcerensoytuna.com </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="subscribe-widget footer-widget">
+                                <h3 class="widget-title">@localizationService.GetLocalizedHtmlString("FOOTER BASLIK 3")</h3>
+                                <div class="widget-content">
+                                    <div class="subscribe-inner">
+                                        <form action="#" method="post" class="subscribe-form">
+                                            <div class="form-group">
+                                                <input type="email" name="email" placeholder="@localizationService.GetLocalizedHtmlString("FOOTER INPUT TEXT")" required="">
+                                                <button type="submit" class="theme-btn">@localizationService.GetLocalizedHtmlString("FOOTER BUTTON")</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="inner-container clearfix">
+                    <div class="left-content pull-left">
+                        <div class="copyright"><a href="#">Dr. Ceren Soytuna</a> &copy; 2022. @localizationService.GetLocalizedHtmlString("FOOTER COPY TEXT")</div>
+                    </div>
+                    <div class="right-content pull-right">
+                        <figure class="footer-logo"><a href="/anasayfa/sayfa"><img style="height:100px; position:relative; right:22px;" src="https://uploads.drcerensoytuna.com/site/logodr.png" alt=""></a></figure>
+                        <ul class="social-style-one footer-social clearfix">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com/drcerensoytuna/?hl=tr"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCwhpb_xpZUx34cF1KIgw1fQ"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- main-footer end -->
+    <!--Scroll to top-->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- jequery plugins -->
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+    <script src="~/js/owl.js"></script>
+    <script src="~/js/wow.js"></script>
+    <script src="~/js/validation.js"></script>
+    <script src="~/js/jquery.fancybox.js"></script>
+    <script src="~/js/appear.js"></script>
+    <script src="~/js/parallax.min.js"></script>
+    <script src="~/js/isotope.js"></script>
+    <script src="~/js/jquery-ui.js"></script>
+    <script src="~/js/jquery.bootstrap-touchspin.js"></script>
+
+    <script src="~/js/script.js"></script>
+</body>
+</html>

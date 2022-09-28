@@ -1,0 +1,139 @@
+﻿@using cerensoytuna.Resource
+@inject LocalizationService localizationService
+@{
+    ViewData["Title"] = "doktorumuz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .page-title {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 70px 0px 70px 0px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .event-details .event-details-content .inner-box .list-item {
+        position: relative;
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #myVideo {
+        right: 0;
+        bottom: 0;
+        max-width: 100%;
+        min-height: 100%;
+    }
+</style>
+
+<section class="page-title centred" style="background-image: url(https://uploads.drcerensoytuna.com/site/klinik4.jpg); background-position: initial; background-position-y: -74px; padding: 70px 0px 70px 0px;">
+    <div class="container">
+        <div class="content-box">
+            <h1>@localizationService.GetLocalizedHtmlString("DR. CEREN SOYTUNA")</h1>
+            <ul class="bread-crumb clearfix">
+                <li><a href="anasayfa/sayfa">@localizationService.GetLocalizedHtmlString("ANA SAYFA")</a></li>
+                <li>@localizationService.GetLocalizedHtmlString("DR. CEREN SOYTUNA")</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="event-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12 content-side">
+                <div class="event-details-content">
+                    <div class="inner-box">
+                        <video autoplay muted loop id="myVideo" class="image-box">
+                            <source src="https://uploads.drcerensoytuna.com/videos/csoytuna.mp4" type="video/mp4">
+                        </video>
+                        @*<figure class="image-box"><img src="https://uploads.drcerensoytuna.com/site/feature-bg.jpg" alt=""></figure>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 content-side">
+                <div class="event-details-content">
+                    <div class="inner-box">
+                        <h1>@localizationService.GetLocalizedHtmlString("Education")</h1>
+                        <ul class="list-item">
+                            <li>
+                                <strong>2017</strong> | Yeditepe Üniversitesi Diş Hekimliği Fakültesi Çocuk Diş Hekimliği
+                            </li>
+                            <li>
+                                <strong>2005</strong> | Yeditepe Üniversitesi Diş Hekimliği Fakültesi
+                            </li>
+                            <li>
+                                <strong>1999</strong> | Zonguldak Fen Lisesi
+                            </li>
+                        </ul>
+                        <h2>@localizationService.GetLocalizedHtmlString("Experiements")</h2>
+
+                        <ul class="list-item">
+                            <li>
+                                <strong>2022 - Halen</strong> | Dr. Ceren Soytuna Kliniği
+
+                            </li>
+                            <li>
+                                <strong>2021 - Halen</strong> | Acıbadem Sağlık Grubu
+
+                            </li>
+                            <li>
+                                <strong>2013 - 2016</strong> | Prodenta Ağız ve Diş Sağlığı Polikliniği
+
+                            </li>
+                            <li>
+                                <strong>2011 - 2013</strong> | Estethica hastanesi / Pedodontist
+
+                            </li>
+                            <li>
+                                <strong>2008 - 2011</strong> | Medident Maltepe Ağız ve Diş Sağlığı Polikliniği / Pedodontist
+
+                            </li>
+                            <li>
+                                <strong>2005 - 2006</strong> | Denthouse Ağız ve Diş Sağlığı Polikliniği / Kurucu Ortak
+
+                            </li>
+                        </ul>
+                        <ul class="social-style-one clearfix">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.instagram.com/drcerensoytuna/?hl=tr"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCwhpb_xpZUx34cF1KIgw1fQ"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                <div class="event-details-sidebar">
+                    <div class="inner-box">
+                        <ul class="info-list">
+                            @*<li>
+                                    <h5>@localizationService.GetLocalizedHtmlString("Start"):</h5>
+                                    <span>20 July, 2019</span>
+                                </li>
+                                <li>
+                                    <h5>@localizationService.GetLocalizedHtmlString("End"):</h5>
+                                    <span>9.00AM to 12.00PM</span>
+                                </li>*@
+                            <li>
+                                <h5>@localizationService.GetLocalizedHtmlString("Location"):</h5>
+                                <span>Levent Mahallesi, Şakayıklı Sokak No: 7/1 Beşiktaş/İstanbul</span>
+                            </li>
+                            <li>
+                                <h5>@localizationService.GetLocalizedHtmlString("Phone Doctor"):</h5>
+                                <a href="tel:(90)5302597158">(+90) 0530 259 71 58</a>
+                            </li>
+                            <li>
+                                <h5>Email:</h5>
+                                <a href="mailto:drdtcerensoytuna@gmail.com ">info@drcerensoytuna.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

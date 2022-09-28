@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cerensoytuna", "cerensoytuna\cerensoytuna.csproj", "{2E3B5D7C-7FD1-40E2-B7B8-137BE6F73E04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CORE", "CORE", "{49F433CD-D9A2-4E52-B436-2FB0B79C09E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DOMAIN", "DOMAIN", "{C03E605B-6AD8-4398-A625-AA7B4928971C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SERVICES", "SERVICES", "{BC469F91-D777-4EEC-95BA-C91FC56D7E83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cerensoytuna.CORE", "cerensoytuna.CORE\cerensoytuna.CORE.csproj", "{11304E2F-895F-47FA-BE13-4F95B0D07AFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cerensoytuna.COMMON", "cerensoytuna.COMMON\cerensoytuna.COMMON.csproj", "{744FB9CC-73AF-4501-A5AE-0A3FC9E89DD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cerensoytuna.ENGINE", "cerensoytuna.ENGINE\cerensoytuna.ENGINE.csproj", "{7849F238-F16E-4F55-8914-7E68862EF3ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cerensoytuna.DAL", "cerensoytuna.DAL\cerensoytuna.DAL.csproj", "{B0F2B5BB-A9F7-4E24-896F-0825AE85E6D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cerensoytuna.editor", "cerensoytuna.editor\cerensoytuna.editor.csproj", "{93D40C6B-823F-4CF2-82D9-C5980B79A9DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E3B5D7C-7FD1-40E2-B7B8-137BE6F73E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E3B5D7C-7FD1-40E2-B7B8-137BE6F73E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E3B5D7C-7FD1-40E2-B7B8-137BE6F73E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E3B5D7C-7FD1-40E2-B7B8-137BE6F73E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11304E2F-895F-47FA-BE13-4F95B0D07AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11304E2F-895F-47FA-BE13-4F95B0D07AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11304E2F-895F-47FA-BE13-4F95B0D07AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11304E2F-895F-47FA-BE13-4F95B0D07AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{744FB9CC-73AF-4501-A5AE-0A3FC9E89DD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744FB9CC-73AF-4501-A5AE-0A3FC9E89DD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744FB9CC-73AF-4501-A5AE-0A3FC9E89DD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744FB9CC-73AF-4501-A5AE-0A3FC9E89DD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7849F238-F16E-4F55-8914-7E68862EF3ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7849F238-F16E-4F55-8914-7E68862EF3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7849F238-F16E-4F55-8914-7E68862EF3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7849F238-F16E-4F55-8914-7E68862EF3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F2B5BB-A9F7-4E24-896F-0825AE85E6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F2B5BB-A9F7-4E24-896F-0825AE85E6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F2B5BB-A9F7-4E24-896F-0825AE85E6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F2B5BB-A9F7-4E24-896F-0825AE85E6D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D40C6B-823F-4CF2-82D9-C5980B79A9DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D40C6B-823F-4CF2-82D9-C5980B79A9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D40C6B-823F-4CF2-82D9-C5980B79A9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D40C6B-823F-4CF2-82D9-C5980B79A9DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11304E2F-895F-47FA-BE13-4F95B0D07AFF} = {49F433CD-D9A2-4E52-B436-2FB0B79C09E5}
+		{744FB9CC-73AF-4501-A5AE-0A3FC9E89DD8} = {49F433CD-D9A2-4E52-B436-2FB0B79C09E5}
+		{7849F238-F16E-4F55-8914-7E68862EF3ED} = {BC469F91-D777-4EEC-95BA-C91FC56D7E83}
+		{B0F2B5BB-A9F7-4E24-896F-0825AE85E6D5} = {C03E605B-6AD8-4398-A625-AA7B4928971C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7816136B-15DF-4357-918E-4EA2545BFD85}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A-1" xml:space="preserve">
+    <value>Trustworthy</value>
+  </data>
+  <data name="A-2" xml:space="preserve">
+    <value>Experienced</value>
+  </data>
+  <data name="A-3" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="About Title" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Adresimiz" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Adınız Soyadınız" xml:space="preserve">
+    <value>Name Surname*</value>
+  </data>
+  <data name="ANA SAYFA" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Bir şeyler arayın..." xml:space="preserve">
+    <value>Search for something...</value>
+  </data>
+  <data name="Bize Mesajınızı Bırakın" xml:space="preserve">
+    <value>Leave Us Your Message</value>
+  </data>
+  <data name="BUTTON Contact" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="C-1" xml:space="preserve">
+    <value>Making children and their families smile</value>
+  </data>
+  <data name="C-2" xml:space="preserve">
+    <value>Our professional team came together with our 15-year-experienced specialist doctor.</value>
+  </data>
+  <data name="C-3" xml:space="preserve">
+    <value>We treat your child with the highest quality materials</value>
+  </data>
+  <data name="Child Best" xml:space="preserve">
+    <value>For Oral and Dental Health</value>
+  </data>
+  <data name="Clinic" xml:space="preserve">
+    <value>From Our Clinic</value>
+  </data>
+  <data name="Contact Info Title" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Content Info" xml:space="preserve">
+    <value>Your child's health is in safe hands with Doctor Ceren Soytuna, an expert in Pediatric Dentistry. Contact us to get information about your child's oral and dental treatment and to make an appointment.</value>
+  </data>
+  <data name="DR. CEREN SOYTUNA" xml:space="preserve">
+    <value>Dr. Ceren Soytuna</value>
+  </data>
+  <data name="Education" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="Email Adresimiz" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="Email Adresiniz" xml:space="preserve">
+    <value>Email Address*</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="Experiements" xml:space="preserve">
+    <value>Working Experience</value>
+  </data>
+  <data name="Faydalı" xml:space="preserve">
+    <value>Useful Information</value>
+  </data>
+  <data name="Faydalı 1" xml:space="preserve">
+    <value>Make it a routine to brush your teeth every morning and evening</value>
+  </data>
+  <data name="Faydalı 2" xml:space="preserve">
+    <value>Set an example for your children in brushing and flossing.</value>
+  </data>
+  <data name="Faydalı 3" xml:space="preserve">
+    <value>Don't neglect regular dental checkups</value>
+  </data>
+  <data name="Faydalı 4" xml:space="preserve">
+    <value>Avoid sugary drinks as much as possible</value>
+  </data>
+  <data name="Faydalı Metin" xml:space="preserve">
+    <value>Some useful information for your children's oral and dental health</value>
+  </data>
+  <data name="Faydalı Title" xml:space="preserve">
+    <value>Best For Your Kids</value>
+  </data>
+  <data name="FOOTER BASLIK 1" xml:space="preserve">
+    <value>Quick Menu</value>
+  </data>
+  <data name="FOOTER BASLIK 2" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="FOOTER BASLIK 3" xml:space="preserve">
+    <value>Subscribe Now</value>
+  </data>
+  <data name="FOOTER BUTTON" xml:space="preserve">
+    <value>SEND</value>
+  </data>
+  <data name="FOOTER COPY TEXT" xml:space="preserve">
+    <value>All Rights Reserved.</value>
+  </data>
+  <data name="FOOTER INPUT TEXT" xml:space="preserve">
+    <value>Enter Email Address</value>
+  </data>
+  <data name="FOOTER METIN" xml:space="preserve">
+    <value>We invite every kid to our clinic that was specially designed for our children</value>
+  </data>
+  <data name="FOOTER METIN 2" xml:space="preserve">
+    <value>To consult our doctor, you can reach us from the information below.</value>
+  </data>
+  <data name="Form Doldur" xml:space="preserve">
+    <value>Fill the Form</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="GİZLİLİK POLİTİKASI" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Happy" xml:space="preserve">
+    <value>Your Children Are Happy With Our Clinic</value>
+  </data>
+  <data name="Hemen Randevu Alın" xml:space="preserve">
+    <value>Make an Appointment Now</value>
+  </data>
+  <data name="Information Title" xml:space="preserve">
+    <value>For Information</value>
+  </data>
+  <data name="Islemler" xml:space="preserve">
+    <value>Treatments</value>
+  </data>
+  <data name="Join With Kidko" xml:space="preserve">
+    <value>For your child's dental treatment</value>
+  </data>
+  <data name="Kidko Button" xml:space="preserve">
+    <value>Make an appointment</value>
+  </data>
+  <data name="KLİNİĞİMİZ" xml:space="preserve">
+    <value>Our Clinic</value>
+  </data>
+  <data name="Konu" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="Mesajınız" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="Phone Doctor" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="RANDEVU" xml:space="preserve">
+    <value>Make An Appoinment</value>
+  </data>
+  <data name="Randevu Alın" xml:space="preserve">
+    <value>Make An Appoinment</value>
+  </data>
+  <data name="Send Form" xml:space="preserve">
+    <value>Send Form</value>
+  </data>
+  <data name="Slider Button" xml:space="preserve">
+    <value>Book Now</value>
+  </data>
+  <data name="Slider Text" xml:space="preserve">
+    <value>For your child's health</value>
+  </data>
+  <data name="Spot" xml:space="preserve">
+    <value>Your child's oral and dental health is in safe hands</value>
+  </data>
+  <data name="SSS BASLIK 1" xml:space="preserve">
+    <value>Why do baby teeth rot quickly?
+</value>
+  </data>
+  <data name="SSS BASLIK 2" xml:space="preserve">
+    <value>What kind of tooth should you choose for children?</value>
+  </data>
+  <data name="SSS BASLIK 3" xml:space="preserve">
+    <value>What do placeholders do?</value>
+  </data>
+  <data name="SSS METIN 1" xml:space="preserve">
+    <value>Milk teeth contain more organic matter than normal teeth, so milk teeth can decay faster.</value>
+  </data>
+  <data name="SSS METIN 2" xml:space="preserve">
+    <value>A small, sparse bristle and medium hard toothbrush should be used.</value>
+  </data>
+  <data name="SSS METIN 3" xml:space="preserve">
+    <value>Placeholders are made to protect the missing tooth in case of single tooth loss. A band on the back tooth and a U-bend soldered on this band are fixed appliances based on the front tooth.</value>
+  </data>
+  <data name="SSS Title" xml:space="preserve">
+    <value>Frequently Asked Questions</value>
+  </data>
+  <data name="SSS Title Short" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="TEDAVİLER" xml:space="preserve">
+    <value>Treatments</value>
+  </data>
+  <data name="Telefon" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Telefon No" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Testimonial" xml:space="preserve">
+    <value>Testimonials</value>
+  </data>
+  <data name="Testimonial-1" xml:space="preserve">
+    <value>I took my 8-year-old daughter for a check up about an intense pain over a recommendation. Dr. Soytuna helped my daughter overcome the dentist fear with her vast knowledge and detailed work. My daughter that used to start crying from fear before we even left the house, now tries to convince her brother for a dentist visit :). I thank her again, and strongly recommend Dr. Ceren Soytuna.</value>
+  </data>
+  <data name="Text Kidko 1" xml:space="preserve">
+    <value>Specially designed for children to feel comfortable</value>
+  </data>
+  <data name="Text Kidko 2" xml:space="preserve">
+    <value>We look forward to serving you in our clinic.</value>
+  </data>
+  <data name="ÇEREZ POLİTİKASI" xml:space="preserve">
+    <value>Cookie Policy</value>
+  </data>
+  <data name="İLETİŞİM" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+</root>

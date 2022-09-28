@@ -1,0 +1,69 @@
+﻿@model cerensoytuna.Models.PostModel.PostViewModel
+@using cerensoytuna.Models.TagPostModel
+@using cerensoytuna.Resource
+@inject LocalizationService localizationService
+@{
+    ViewData["Title"] = "islem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<TagPostListViewModel> tagList = ViewBag.TagList as List<TagPostListViewModel>;
+
+}
+
+<style>
+    .blog-details {
+        position: relative;
+        display: block;
+        padding: 50px 0px 0px;
+    }
+    .page-title {
+        padding: 60px 0px 60px 0px;
+    }
+</style>
+
+<section class="page-title centred" style="background-image: url(https://uploads.drcerensoytuna.com/site/page-title.jpg);">
+    <div class="container">
+        <div class="content-box">
+            <h1>@localizationService.GetLocalizedHtmlString("Post")</h1>
+            <ul class="bread-crumb clearfix">
+                <li><a href="/anasayfa/sayfa">@localizationService.GetLocalizedHtmlString("ANA SAYFA")</a></li>
+                <li>@localizationService.GetLocalizedHtmlString("Post")</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="blog-details sidebar-page-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                <div class="blog-details-content">
+                    <div class="inner-box">
+                        <div class="content-style-one">
+                            <div class="top-content">
+                                <h1>@Model.Title</h1>
+                                <div class="bold-text">@Model.Spot</div>
+                            </div>
+                            <figure class="image-box"><img src="https://uploads.drcerensoytuna.com/images/@Model.Image" alt="@Model.Image"></figure>
+                            <div class="text">
+                                @Html.Raw(Model.PostContent)
+                            </div>
+                        </div>
+
+                        <div class="post-share-option">
+                            <ul class="tags">
+                                <li class="title">Etiketler:</li>
+                                @foreach (var item in tagList)
+                                {
+                                    <li><a href="/">@item.tag.TagName</a>,</li>
+
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

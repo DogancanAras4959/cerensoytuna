@@ -1,0 +1,113 @@
+﻿@using cerensoytuna.COMMON.Helpers
+@model PaginationList<cerensoytuna.editor.Models.PostModel.PostListItemModel>
+
+@{
+    ViewData["Title"] = "gonderiler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="row">
+
+    <div class="col-md-12">
+        <h5 class="subtitle mb5"><a href="@Url.Action("gonderiolustur","gonderi")">Islem Olustur</a></h5>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-striped mb30" id="myTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Baslik</th>
+                        <th>Durum</th>
+                        <th>Tedavi Eşle</th>
+                        <th>Islem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td><a href="@Url.Action("gonderiduzenle","gonderi", new { Id = item.Id })">@item.Title</a></td>
+
+                            @if (item.IsActive == true)
+                            {
+                                <td><span class="text-success">Aktif</span></td>
+                            }
+                            else
+                            {
+                                <td><span class="text-danger">Pasif</span></td>
+                            }
+
+                            @if (item.LangId == 1)
+                            {
+                                <td>
+                                    @{ int Id = item.Id; }
+                                    <select asp-for="@item.PostId"
+                                            asp-items="@ViewBag.SelectLanguage"
+                                            style="width:80%;"
+                                            class="form-control mb15"
+                                            onchange="status_update(this.options[this.selectedIndex].value, @Id)">
+                                        <option selected="selected" value="999">Eşleştirmek istediğiniz tedaviyi seçiniz (Zorunlu)</option>
+                                    </select>
+                                </td>
+                            }
+
+                            else if (item.LangId == 2)
+
+                            {
+                        <td>
+                            @{ int Id = item.Id; }
+                            <select asp-for="@item.PostId"
+                                    asp-items="@ViewBag.SelectLanguageEng"
+                                    style="width:80%;"
+                                    class="form-control mb15"
+                                    onchange="status_update(this.options[this.selectedIndex].value, @Id)">
+                                <option selected="selected" value="999">Eşleştirmek istediğiniz tedaviyi seçiniz (Zorunlu)</option>
+                            </select>
+                        </td>
+                            }
+
+                            <td>
+                                <a href=""><i class="fa fa-trash-o text-danger"></i></a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/js/jquery-1.11.1.min.js"></script>
+
+@*<script type="text/javascript">
+        $('#slctPost').change(function () {
+            val = $('#slctPost :selected').map(function (i, el) {
+                return $(el).val();
+            }).get();
+            alert(val);
+        });
+    </script>*@
+
+<script type="text/javascript">
+    function status_update(value, Id) {
+
+        var postId = value;
+        var selectId = Id;
+
+        $.ajax({
+            type: "POST",
+            url: "/gonderi/tedaviyiesle",
+            data: { postIds: postId, selectIds: selectId },
+            success: function (response) {
+               
+            }, error: function (e, j, k) {
+              
+            }
+        });
+
+    }
+</script>

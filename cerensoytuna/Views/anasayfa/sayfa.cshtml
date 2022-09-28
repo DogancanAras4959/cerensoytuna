@@ -1,0 +1,552 @@
+﻿@using cerensoytuna.Models.PostModel
+@using cerensoytuna.Resource
+@inject LocalizationService localizationService
+@{
+    ViewData["Title"] = "sayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<PostListViewModel> post = ViewBag.Gonderiler as List<PostListViewModel>;
+}
+
+<style>
+    .feature-section .anim-icon .icon-2 {
+        background: url(../images/icons/anim-icon-6.png);
+        width: 321px;
+        height: 289px;
+        right: 0px;
+        bottom: -142px;
+        background-repeat: no-repeat;
+    }
+
+    .testimonial-faq .anim-icon .icon-1 {
+        background: url(../images/icons/anim-icon-8.png);
+        width: 246px;
+        height: 263px;
+        top: -54px;
+        right: 100px;
+        background-repeat: no-repeat;
+        -webkit-animation: zoom-fade 5s infinite linear;
+        animation: zoom-fade 5s infinite linear;
+    }
+
+    #myVideo {
+        right: 0;
+        bottom: 0;
+        max-width: 92%;
+        min-height: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .service-block-one .icon-box {
+        position: relative;
+        display: inline-block;
+        font-size: 25px;
+        line-height: 30px;
+        font-family: 'Chams Black',sans-serif;
+        color: #ff7162;
+        margin-bottom: 25px;
+    }
+
+    .testimonial-content .client-thumb-outer {
+        display: none;
+        position: relative;
+        max-width: 350px;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-top: 43px;
+    }
+
+    .testimonial-block .inner-box:before {
+        position: absolute;
+        content: '';
+        background: #253b71;
+        width: 28px;
+        height: 28px;
+        display: none;
+        border-radius: 5px;
+        left: 50%;
+        margin-left: -15px;
+        bottom: -8px;
+        transform: rotate(-45deg);
+    }
+</style>
+
+<section class="main-slider">
+    <div class="main-slider-carousel owl-carousel owl-theme nav-style-one">
+        <video autoplay muted loop id="myVideo">
+            <source src="https://uploads.drcerensoytuna.com/videos/klinik.mp4" type="video/mp4">
+        </video>
+        @*<div class="slide" style="background:url(https://uploads.drcerensoytuna.com/videos/klinik.mp4)">
+                <div class="container">
+                    <div class="content-box">
+                        <h1>Dr. Ceren Soytuna</h1>
+                        <h3>@localizationService.GetLocalizedHtmlString("Slider Text")</h3>
+                        <div class="btn-box"><a href="/anasayfa/iletisim" class="theme-btn">@localizationService.GetLocalizedHtmlString("Slider Button")</a></div>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+</section>
+<!-- main-slider end -->
+<!-- about-section -->
+<section class="about-section">
+    <div class="anim-icon">
+        <div class="icon icon-1 float-bob-x"></div>
+        <div class="icon icon-2 wow zoomIn" data-wow-delay="00ms" data-wow-duration="1500ms"></div>
+        <div class="icon icon-3"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div class="image-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    <figure class="image image-1"><img src="https://uploads.drcerensoytuna.com/site/about-1.jpg" alt=""></figure>
+                    <figure class="image image-2"><img src="https://uploads.drcerensoytuna.com/site/about-2.jpg" alt=""></figure>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div class="content-box">
+                    <div class="sec-title style-two">
+                        <h5>@localizationService.GetLocalizedHtmlString("Information Title")</h5>
+                        <h1>@localizationService.GetLocalizedHtmlString("Contact Info Title")</h1>
+                    </div>
+                    <div class="bold-text">@localizationService.GetLocalizedHtmlString("Spot")</div>
+                    <div class="text">
+                        <p>
+                            @localizationService.GetLocalizedHtmlString("Content Info")
+                        </p>
+                    </div>
+                    @if (localizationService.GetLocalizedHtmlString("BUTTON Contact") == "Contact Us")
+                    {
+                        <div class="btn-box"><a asp-area="" asp-controller="home" asp-action="contact" class="theme-btn">@localizationService.GetLocalizedHtmlString("BUTTON Contact")</a></div>
+                    }
+                    else
+                    {
+                        <div class="btn-box"><a asp-area="" asp-controller="anasayfa" asp-action="iletisim" class="theme-btn">@localizationService.GetLocalizedHtmlString("BUTTON Contact")</a></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- about-section end -->
+<!-- service-section -->
+<section class="service-section sec-pad" style="background-image: url(https://uploads.drcerensoytuna.com/site/service-bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12 inner-column">
+                <div class="inner-content">
+                    <div class="sec-title style-two">
+                        <h5>@localizationService.GetLocalizedHtmlString("Faydalı")</h5>
+                        <h1>@localizationService.GetLocalizedHtmlString("Faydalı Title")</h1>
+                    </div>
+                    <div class="text">
+                        @localizationService.GetLocalizedHtmlString("Faydalı Metin")
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12 col-sm-12 carousel-column">
+                <div class="carousel-content">
+                    <div class="services-carousel owl-carousel owl-theme">
+                        <div class="service-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <img style="height: 80px; margin: auto; padding-bottom: 10px;"
+                                         src="https://uploads.drcerensoytuna.com/site/tooth.png" />
+                                    <div class="text">@localizationService.GetLocalizedHtmlString("Faydalı 1")</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-block-one">
+                            <div class="inner-box">
+                                <div class="icon-box">
+                                    <img style="height: 80px; margin: auto; padding-bottom: 10px;"
+                                         src="https://uploads.drcerensoytuna.com/site/floss.png" /><div class="text">@localizationService.GetLocalizedHtmlString("Faydalı 2")</div>@*<i class="flaticon-running"></i>*@
+                                    </div>
+                                    @*<h3><a href="#">Sports Training</a></h3>
+                                        <div class="text">Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</div>*@
+                                </div>
+                            </div>
+                            <div class="service-block-one">
+                                <div class="inner-box">
+                                    <div class="icon-box">
+                                        <img style="height: 80px; margin: auto; padding-bottom: 10px;"
+                                             src="https://uploads.drcerensoytuna.com/site/peak.png" /><div class="text">@localizationService.GetLocalizedHtmlString("Faydalı 3")</div>@*<i class="flaticon-drum"></i>*@
+                                        </div>
+                                        @*<h3><a href="#">Music Training</a></h3>
+                                            <div class="text">Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</div>*@
+                                    </div>
+                                </div>
+                                <div class="service-block-one">
+                                    <div class="inner-box">
+                                        <div class="icon-box">
+                                            <img style="height: 80px; margin: auto; padding-bottom: 10px;"
+                                                 src="https://uploads.drcerensoytuna.com/site/juice.png" /><div class="text">@localizationService.GetLocalizedHtmlString("Faydalı 4")</div>@*<i class="flaticon-drum"></i>*@
+                                            </div>
+                                            @*<h3><a href="#">Music Training</a></h3>
+                                                <div class="text">Cupidatat non proident sunt culpa qui officia deserunt mollit anim.</div>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            @*<div class="classes-section sec-pad" style="padding: 0px 0px 0px 0px;">
+                    <div class="anim-icon">
+                        <div class="icon icon-1 float-bob-x"></div>
+                    </div>
+                </div>*@
+            <!-- service-section end -->
+            <!-- feature-section -->
+            <section class="feature-section">
+                <div class="anim-icon">
+                    <div class="icon icon-1"></div>
+                    <div class="icon icon-2"></div>
+                </div>
+                <div class="image-column" style="background-image: url(https://uploads.drcerensoytuna.com/site/feature-bg.jpg);"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-12 col-md-12 offset-xl-7 inner-column">
+                            <div class="inner-content">
+                                <div class="sec-title style-two">
+                                    <h5>@localizationService.GetLocalizedHtmlString("About Title")</h5>
+                                    <h1 style="font-size:35px;">@localizationService.GetLocalizedHtmlString("Child Best")</h1>
+                                </div>
+                                <div class="inner-box">
+                                    <div class="single-item wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <div class="icon-box"><i class="fa fa-user-shield"></i></div>
+                                        <h3><a href="#">@localizationService.GetLocalizedHtmlString("A-1")</a></h3>
+                                        <div class="text">@localizationService.GetLocalizedHtmlString("C-1")</div>
+                                    </div>
+                                    <div class="single-item wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <div class="icon-box"><i class="fa fa-briefcase-medical"></i></div>
+                                        <h3><a href="#">@localizationService.GetLocalizedHtmlString("A-2")</a></h3>
+                                        <div class="text">
+                                            @localizationService.GetLocalizedHtmlString("C-2")
+                                        </div>
+                                    </div>
+                                    <div class="single-item wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <div class="icon-box"><i class="fa fa-award"></i></div>
+                                        <h3><a href="#">@localizationService.GetLocalizedHtmlString("A-3")</a></h3>
+                                        <div class="text">@localizationService.GetLocalizedHtmlString("C-3")</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonial-faq">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 testimonial-column">
+                            <div class="testimonial-content">
+                                <div class="sec-title style-two">
+                                    <h5>@localizationService.GetLocalizedHtmlString("Testimonial")</h5>
+                                    <h1>@localizationService.GetLocalizedHtmlString("Happy")</h1>
+                                </div>
+                                <div class="inner-content">
+                                    <div class="client-testimonial-carousel owl-carousel owl-theme">
+                                        <div class="testimonial-block">
+                                            <div class="inner-box">
+                                                @*<div class="author">Hattie Bradly <span>/ Kids Fathre</span></div>*@
+                                                <ul class="rating">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                                <div class="text">
+                                                    @localizationService.GetLocalizedHtmlString("Testimonial-1")
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @*<div class="testimonial-block">
+                                                <div class="inner-box">
+                                                    <div class="author">Jesscia Brown <span>/ Kids Mother</span></div>
+                                                    <ul class="rating">
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet consectetr adipicing elit usmod tempor incidunt enim minim quis nostrud nis exer tation ullamco laboris nis aliquip commodo per</div>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-block">
+                                                <div class="inner-box">
+                                                    <div class="author">Christine Eve <span>/ Kids Mother</span></div>
+                                                    <ul class="rating">
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet consectetr adipicing elit usmod tempor incidunt enim minim quis nostrud nis exer tation ullamco laboris nis aliquip commodo per</div>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-block">
+                                                <div class="inner-box">
+                                                    <div class="author">Hattie Bradly <span>/ Kids Fathre</span></div>
+                                                    <ul class="rating">
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet consectetr adipicing elit usmod tempor incidunt enim minim quis nostrud nis exer tation ullamco laboris nis aliquip commodo per</div>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-block">
+                                                <div class="inner-box">
+                                                    <div class="author">Jesscia Brown <span>/ Kids Mother</span></div>
+                                                    <ul class="rating">
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet consectetr adipicing elit usmod tempor incidunt enim minim quis nostrud nis exer tation ullamco laboris nis aliquip commodo per</div>
+                                                </div>
+                                            </div>
+                                            <div class="testimonial-block">
+                                                <div class="inner-box">
+                                                    <div class="author">Christine Eve <span>/ Kids Mother</span></div>
+                                                    <ul class="rating">
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    </ul>
+                                                    <div class="text">Lorem ipsum dolor sit amet consectetr adipicing elit usmod tempor incidunt enim minim quis nostrud nis exer tation ullamco laboris nis aliquip commodo per</div>
+                                                </div>
+                                            </div>*@
+
+                                    </div>
+
+                                    <!--Client Thumbs Carousel-->
+                                    <div class="client-thumb-outer">
+                                        <div class="client-thumbs-carousel owl-carousel owl-theme">
+                                            <div class="thumb-item">
+                                                <figure class="thumb-box"><img src="https://uploads.drcerensoytuna.com/site/testimonial-1.jpg" alt=""></figure>
+                                            </div>
+                                            <div class="thumb-item">
+                                                <figure class="thumb-box"><img src="https://uploads.drcerensoytuna.com/site/testimonial-2.jpg" alt=""></figure>
+                                            </div>
+                                            <div class="thumb-item">
+                                                <figure class="thumb-box"><img src="https://uploads.drcerensoytuna.com/site/testimonial-3.jpg" alt=""></figure>
+                                            </div>
+                                            <div class="thumb-item">
+                                                <figure class="thumb-box"><img src="https://uploads.drcerensoytuna.com/site/testimonial-4.jpg" alt=""></figure>
+                                            </div>
+                                            <div class="thumb-item">
+                                                <figure class="thumb-box"><img src="https://uploads.drcerensoytuna.com/site/testimonial-5.jpg" alt=""></figure>
+                                            </div>
+                                            <div class="thumb-item">
+                                                <figure class="thumb-box"><img src="https://uploads.drcerensoytuna.com/site/testimonial-6.jpg" alt=""></figure>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 faq-column">
+                            <div class="faq-content">
+                                <div class="sec-title style-two">
+                                    <h5>@localizationService.GetLocalizedHtmlString("SSS Title Short")</h5>
+                                    <h1>@localizationService.GetLocalizedHtmlString("SSS Title")</h1>
+                                </div>
+                                <ul class="accordion-box active-block">
+
+                                    <li class="accordion block">
+                                        <div class="acc-btn active">
+                                            <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                            <h4>
+                                                @localizationService.GetLocalizedHtmlString("SSS BASLIK 1")
+                                            </h4>
+                                        </div>
+                                        <div class="acc-content current">
+                                            <div class="content">
+                                                <div class="text">@localizationService.GetLocalizedHtmlString("SSS METIN 1")</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                            <h4>@localizationService.GetLocalizedHtmlString("SSS BASLIK 2")</h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">@localizationService.GetLocalizedHtmlString("SSS METIN 2")</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"><i class="fas fa-angle-down"></i></div>
+                                            <h4>
+                                                @localizationService.GetLocalizedHtmlString("SSS BASLIK 3")
+                                            </h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">@localizationService.GetLocalizedHtmlString("SSS METIN 3")</div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- testimonial-faq end -->
+            <!-- cta-section -->
+            <section class="cta-section centred">
+                <div class="anim-icon">
+                    <div class="icon icon-1 float-bob-x"></div>
+                    <div class="icon icon-2 rotate-me"></div>
+                </div>
+                <div class="parallax-scene parallax-scene-1 parallax-icon">
+                    <span data-depth="0.40" class="parallax-layer icon icon-1"></span>
+                    <span data-depth="0.50" class="parallax-layer icon icon-2"></span>
+                    <span data-depth="0.30" class="parallax-layer icon icon-3"></span>
+                    <span data-depth="0.40" class="parallax-layer icon icon-4"></span>
+                    <span data-depth="0.50" class="parallax-layer icon icon-5"></span>
+                    <span data-depth="0.30" class="parallax-layer icon icon-6"></span>
+                    <span data-depth="0.40" class="parallax-layer icon icon-7"></span>
+                </div>
+                <div class="container">
+                    <div class="content-box">
+                        <h3>@localizationService.GetLocalizedHtmlString("Join With Kidko")</h3>
+                        <h1>@localizationService.GetLocalizedHtmlString("Hemen Randevu Alın")</h1>
+                        <div class="text">@localizationService.GetLocalizedHtmlString("Text Kidko 1")<br />@localizationService.GetLocalizedHtmlString("Text Kidko 2")</div>
+
+                        @if (localizationService.GetLocalizedHtmlString("Kidko Button") == "Make an appointment")
+                        {
+                            <div class="btn-box"><a asp-area="" asp-controller="home" asp-action="booknow" class="theme-btn">@localizationService.GetLocalizedHtmlString("Kidko Button")</a></div>
+                        }
+                        else
+                        {
+                            <div class="btn-box"><a asp-area="" asp-controller="anasayfa" asp-action="randevual" class="theme-btn">@localizationService.GetLocalizedHtmlString("Kidko Button")</a></div>
+                        }
+                    </div>
+                </div>
+            </section>
+            <!-- cta-section end -->
+            <!-- gallery-section -->
+            <section class="gallery-section sec-pad centred">
+                <div class="container-fluid">
+                    <div class="sec-title">
+                        <h5>@localizationService.GetLocalizedHtmlString("Gallery")</h5>
+                        <h1>@localizationService.GetLocalizedHtmlString("Clinic")</h1>
+                    </div>
+                    <div class="gallery-carousel owl-carousel owl-theme">
+                        <div class="gallery-block">
+                            <div class="image-box">
+                                <figure class="image"><img src="https://uploads.drcerensoytuna.com/site/testimonial-1.jpg" alt=""></figure>
+                                <div class="overlay-box"><a href="https://uploads.drcerensoytuna.com/site/testimonial-1.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-add"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="gallery-block">
+                            <div class="image-box">
+                                <figure class="image"><img src="https://uploads.drcerensoytuna.com/site/testimonial-2.jpg" alt=""></figure>
+                                <div class="overlay-box"><a href="https://uploads.drcerensoytuna.com/site/testimonial-2.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-add"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="gallery-block">
+                            <div class="image-box">
+                                <figure class="image"><img src="https://uploads.drcerensoytuna.com/site/testimonial-3.jpg" alt=""></figure>
+                                <div class="overlay-box"><a href="https://uploads.drcerensoytuna.com/site/testimonial-3.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-add"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="gallery-block">
+                            <div class="image-box">
+                                <figure class="image"><img src="https://uploads.drcerensoytuna.com/site/testimonial-4.jpg" alt=""></figure>
+                                <div class="overlay-box"><a href="https://uploads.drcerensoytuna.com/site/testimonial-4.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-add"></i></a></div>
+                            </div>
+                        </div>
+                        <div class="gallery-block">
+                            <div class="image-box">
+                                <figure class="image"><img src="https://uploads.drcerensoytuna.com/site/testimonial-5.jpg" alt=""></figure>
+                                <div class="overlay-box"><a href="https://uploads.drcerensoytuna.com/site/testimonial-5.jpg" class="lightbox-image" data-fancybox="gallery"><i class="flaticon-add"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- gallery-section end -->
+            <!-- news-section -->
+            <section class="news-section">
+                <div class="anim-icon">
+                    <div class="icon icon-1 wow zoomIn" data-wow-delay="00ms" data-wow-duration="1500ms"></div>
+                </div>
+                <div class="container">
+                    <div class="sec-title centred">
+                        <h1>@localizationService.GetLocalizedHtmlString("Islemler")</h1>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in post.Take(3))
+                        {
+                            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                                <div class="news-block-one wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <div class="inner-box">
+                                        <figure class="image-box"><a href="@Url.Action("islem","anasayfa", new { Id = item.Id, Title = item.GenerateSlug() })"><img style="height:250px; object-fit:cover" src="https://uploads.drcerensoytuna.com/images/@item.Image" alt="@item.Image"></a></figure>
+                                        <div class="lower-content" style="height:230px;">
+                                            @if (item.Title.Length > 70)
+                                            {
+                                                <h3><a href="@Url.Action("islem","anasayfa", new { Id = item.Id, Title = item.GenerateSlug() })">@item.Title.Substring(0, 70)<span>...</span></a></h3>
+                                            }
+                                            else
+                                            {
+                                                <h3><a href="@Url.Action("islem","anasayfa", new { Id = item.Id, Title = item.GenerateSlug() })">@item.Title</a></h3>
+                                            }
+
+                                            @if (item.Spot.Length > 210)
+                                            {
+                                                <div class="text">@item.Spot.Substring(0, 100)<span>...</span></div>
+                                            }
+                                            else
+                                            {
+                                                <div class="text">@item.Spot</div>
+                                            }
+
+                                            <div class="link-btn wow zoomIn" data-wow-delay="00ms" data-wow-duration="1500ms"><a href="@Url.Action("islem","anasayfa", new { Id = item.Id, Title = item.GenerateSlug() })"><i class="flaticon-next"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                // Get the video
+                var video = document.getElementById("myVideo");
+
+                // Get the button
+                var btn = document.getElementById("myBtn");
+
+                // Pause and play the video, and change the button text
+                function myFunction() {
+                    if (video.paused) {
+                        video.play();
+                        btn.innerHTML = "Pause";
+                    } else {
+                        video.pause();
+                        btn.innerHTML = "Play";
+                    }
+                }
+            </script>
