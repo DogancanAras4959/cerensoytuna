@@ -18,19 +18,19 @@ namespace cerensoytuna.COMMON.Helpers
             switch (_admin)
             {
                 case "Admin":
-                    ftpInfo.Url = "ftp://uploads.drcerensoytuna.com//uploads/images";
+                    ftpInfo.Url = "ftp://uploads.drcerenayozger.com//uploads/images";
                     ftpInfo.UserName = "drcerens_5nkbrrv94kp";
                     ftpInfo.Password = "B0b5*0vl9";
                     break;
 
                 case "Videos":
-                    ftpInfo.Url = "ftp://uploads.drcerensoytuna.com//uploads/videos";
+                    ftpInfo.Url = "ftp://uploads.drcerenayozger.com//uploads/videos";
                     ftpInfo.UserName = "drcerens_5nkbrrv94kp";
                     ftpInfo.Password = "B0b5*0vl9";
                     break;
 
                 case "Files":
-                    ftpInfo.Url = "ftp://uploads.drcerensoytuna.com//uploads/files";
+                    ftpInfo.Url = "ftp://uploads.drcerenayozger.com//uploads/files";
                     ftpInfo.UserName = "drcerens_5nkbrrv94kp";
                     ftpInfo.Password = "B0b5*0vl9";
                     break;

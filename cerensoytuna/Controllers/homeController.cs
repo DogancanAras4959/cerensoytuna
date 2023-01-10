@@ -47,13 +47,13 @@ namespace cerensoytuna.Controllers
             MetaViewModel meta = new MetaViewModel();
 
             meta.Title = "Contact Us";
-            meta.Keywords = "Çocuk, Klinik, Soytuna, Dentist, Bakım";
+            meta.Keywords = "Çocuk, Klinik, Ayözger, Dentist, Bakım";
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.Image = "https://uploads.drcerensoytuna.com/site/logodr.png";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Soytuna | Doktor & Dişçi";
-            meta.ogImage = "https://uploads.drcerensoytuna.com/site/logodr.png";
-            meta.Url = "https://www.drcerensoytuna.com/";
+            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
@@ -75,13 +75,13 @@ namespace cerensoytuna.Controllers
             MetaViewModel meta = new MetaViewModel();
 
             meta.Title = "Book Now";
-            meta.Keywords = "Çocuk, Klinik, Soytuna, Dentist, Bakım";
+            meta.Keywords = "Çocuk, Klinik, Ayözger, Dentist, Bakım";
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.Image = "https://uploads.drcerensoytuna.com/site/logodr.png";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Soytuna | Doktor & Dişçi";
-            meta.ogImage = "https://uploads.drcerensoytuna.com/site/logodr.png";
-            meta.Url = "https://www.drcerensoytuna.com/";
+            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
@@ -103,13 +103,13 @@ namespace cerensoytuna.Controllers
             MetaViewModel meta = new MetaViewModel();
 
             meta.Title = "About Us";
-            meta.Keywords = "Çocuk, Klinik, Soytuna, Dentist, Bakım";
+            meta.Keywords = "Çocuk, Klinik, Ayözger, Dentist, Bakım";
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.Image = "https://uploads.drcerensoytuna.com/site/logodr.png";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Soytuna | Doktor & Dişçi";
-            meta.ogImage = "https://uploads.drcerensoytuna.com/site/logodr.png";
-            meta.Url = "https://www.drcerensoytuna.com/";
+            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
@@ -138,13 +138,13 @@ namespace cerensoytuna.Controllers
             MetaViewModel meta = new MetaViewModel();
 
             meta.Title = "Treatments";
-            meta.Keywords = "Çocuk, Klinik, Soytuna, Dentist, Bakım";
+            meta.Keywords = "Çocuk, Klinik, Ayözger, Dentist, Bakım";
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.Image = "https://uploads.drcerensoytuna.com/site/logodr.png";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Soytuna | Doktor & Dişçi";
-            meta.ogImage = "https://uploads.drcerensoytuna.com/site/logodr.png";
-            meta.Url = "https://www.drcerensoytuna.com/";
+            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
@@ -182,11 +182,11 @@ namespace cerensoytuna.Controllers
             meta.Title = newsGet.MetaTitle;
             meta.Keywords = newsGet.Tag;
             meta.Description = newsGet.Spot;
-            meta.Image = "https://uploads.drcerensoytuna.com/images/" + newsGet.Image;
+            meta.Image = "https://uploads.drcerenayozger.com/images/" + newsGet.Image;
             meta.ogDescription = newsGet.Spot;
             meta.ogTitle = newsGet.Title;
-            meta.ogImage = "https://uploads.drcerensoytuna.com/images/" + newsGet.Image;
-            meta.Url = "https://uploads.drcerensoytuna.com/" + Id + newsGet.Title;
+            meta.ogImage = "https://uploads.drcerenayozger.com/images/" + newsGet.Image;
+            meta.Url = "https://uploads.drcerenayozger.com/" + Id + newsGet.Title;
             ViewBag.Meta = meta;
 
             #endregion    
@@ -203,7 +203,7 @@ namespace cerensoytuna.Controllers
         {
             string menuName = _localizationService.GetLocalizedHtmlString("DR. CEREN SOYTUNA");
 
-            if (menuName == "Dr. Ceren Soytuna")
+            if (menuName == "Dr. Ceren Ayözger")
             {
                 return RedirectToAction("doktorumuz", "anasayfa");
             }
@@ -212,14 +212,14 @@ namespace cerensoytuna.Controllers
 
             MetaViewModel meta = new MetaViewModel();
 
-            meta.Title = "Dt. Ceren Soytuna";
-            meta.Keywords = "Çocuk, Klinik, Soytuna, Dentist, Bakım";
+            meta.Title = "Dt. Ceren Ayözger";
+            meta.Keywords = "Çocuk, Klinik, Ayözger, Dentist, Bakım";
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.Image = "https://uploads.drcerensoytuna.com/site/logodr.png";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Soytuna | Doktor & Dişçi";
-            meta.ogImage = "https://uploads.drcerensoytuna.com/site/logodr.png";
-            meta.Url = "https://www.drcerensoytuna.com/";
+            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
@@ -241,13 +241,13 @@ namespace cerensoytuna.Controllers
             MetaViewModel meta = new MetaViewModel();
 
             meta.Title = "Result";
-            meta.Keywords = "Çocuk, Klinik, Soytuna, Dentist, Bakım";
+            meta.Keywords = "Çocuk, Klinik, Ayözger, Dentist, Bakım";
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.Image = "https://uploads.drcerensoytuna.com/site/logodr.png";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Soytuna | Doktor & Dişçi";
-            meta.ogImage = "https://uploads.drcerensoytuna.com/site/logodr.png";
-            meta.Url = "https://www.drcerensoytuna.com/";
+            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
