@@ -11,5 +11,6 @@ namespace cerensoytuna.COMMON.DTOS.PostDTO.PostLanguageDTO
     {
         public string PostEngTitle { get; set; }
         public string PostTrTitle { get; set; }
+        public string PostDeuTitle { get; set; }
     }
 }

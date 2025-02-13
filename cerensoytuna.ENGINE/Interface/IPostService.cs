@@ -60,13 +60,15 @@ namespace cerensoytuna.ENGINES.Interface
         #endregion
 
         #region PostLanguageList 
-      
+        List<PostListItemDto> PostListWithWebDeu();
         List<PostListItemDto> PostListWithWebEng();
         List<PostListItemDto> PostListWithWebTr();
         PostLanguageDto getPostLanguage(string title);
         Task<int> insertLanguageSwitch(PostLanguageDto model);
         Task<int> editPostLanguageTr(PostLanguageDto model);
         Task<int> editPostLanguageEn(PostLanguageDto model);
+        Task<int> editPostLanguageDeu(PostLanguageDto model);
+
 
         #endregion
 

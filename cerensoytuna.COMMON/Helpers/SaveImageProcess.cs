@@ -19,20 +19,20 @@ namespace cerensoytuna.COMMON.Helpers
             {
                 case "Admin":
                     ftpInfo.Url = "ftp://uploads.drcerenayozger.com//uploads/images";
-                    ftpInfo.UserName = "drcerens_5nkbrrv94kp";
-                    ftpInfo.Password = "B0b5*0vl9";
+                    ftpInfo.UserName = "drcerenay_v9l0y3djp9";
+                    ftpInfo.Password = "k36PKfpbtYltd3";
                     break;
 
                 case "Videos":
                     ftpInfo.Url = "ftp://uploads.drcerenayozger.com//uploads/videos";
-                    ftpInfo.UserName = "drcerens_5nkbrrv94kp";
-                    ftpInfo.Password = "B0b5*0vl9";
+                    ftpInfo.UserName = "drcerenay_v9l0y3djp9";
+                    ftpInfo.Password = "k36PKfpbtYltd3";
                     break;
 
                 case "Files":
                     ftpInfo.Url = "ftp://uploads.drcerenayozger.com//uploads/files";
-                    ftpInfo.UserName = "drcerens_5nkbrrv94kp";
-                    ftpInfo.Password = "B0b5*0vl9";
+                    ftpInfo.UserName = "drcerenay_v9l0y3djp9";
+                    ftpInfo.Password = "k36PKfpbtYltd3";
                     break;
 
                 default:

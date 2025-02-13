@@ -18,6 +18,7 @@ namespace cerensoytuna.DAL.Models
         public int Id { get; set; }
         public string postTrTitle { get; set; }
         public string postEngTitle { get; set; }
+        public string postDeuTitle { get; set; }
 
     }
 }

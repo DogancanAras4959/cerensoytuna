@@ -16,11 +16,16 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Localization;
 using Microsoft.Extensions.Localization;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using cerensoytuna.Core;
 
 namespace cerensoytuna.Controllers
 {
@@ -30,12 +35,14 @@ namespace cerensoytuna.Controllers
         private readonly IMapper _mapper;
         private readonly IPostService _postService;
         private readonly IEmailSender _emailSender;
-        public anasayfaController(LocalizationService localizationService, IMapper mapper, IPostService postService, IEmailSender emailSender)
+        private readonly IConfiguration _configuration;
+        public anasayfaController(LocalizationService localizationService, IMapper mapper, IPostService postService, IEmailSender emailSender, IConfiguration configuration)
         {
             _localizationService = localizationService;
             _mapper = mapper;
             _emailSender = emailSender;
             _postService = postService;
+            _configuration = configuration;
         }
 
         public IActionResult sayfa()
@@ -70,12 +77,18 @@ namespace cerensoytuna.Controllers
                 ViewBag.Gonderiler = haberlist;
                 return View();
             }
-            else
+            else if(name == "Startseite")
             {
-                haberlist = _mapper.Map<List<PostListItemDto>, List<PostListViewModel>>(_postService.PostListWithWeb());
+                haberlist = _mapper.Map<List<PostListItemDto>, List<PostListViewModel>>(_postService.PostListWithWebDeu());
                 ViewBag.Gonderiler = haberlist;
                 return View();
-            }     
+            }
+            else
+            {
+                haberlist = _mapper.Map<List<PostListItemDto>, List<PostListViewModel>>(_postService.PostListWithWebTr());
+                ViewBag.Gonderiler = haberlist;
+                return View();
+            }
         }
 
         public IActionResult iletisim()
@@ -85,6 +98,10 @@ namespace cerensoytuna.Controllers
             if (menuName == "Contact Us")
             {
                 return RedirectToAction("contact", "home");
+            }
+            else if(menuName == "Kontaktieren Sie uns")
+            {
+                return RedirectToAction("kontakt", "startseite");
             }
 
             #region Meta
@@ -96,7 +113,7 @@ namespace cerensoytuna.Controllers
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogTitle = "Dr. Ceren Ayözger | İletişim";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerensoytuna.com/";
             ViewBag.Meta = meta;
@@ -114,6 +131,10 @@ namespace cerensoytuna.Controllers
             {
                 return RedirectToAction("booknow", "home");
             }
+            else if(menuName == "Einen Termin vereinbaren")
+            {
+                return RedirectToAction("jetztbuchen","startseite");
+            }
 
             #region Meta
 
@@ -124,7 +145,7 @@ namespace cerensoytuna.Controllers
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogTitle = "Dr. Ceren Ayözger | Randevu Al";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerensoytuna.com/";
             ViewBag.Meta = meta;
@@ -142,6 +163,10 @@ namespace cerensoytuna.Controllers
             {
                 return RedirectToAction("aboutus", "home");
             }
+            else if(menuName == "Unsere Klinik")
+            {
+                return RedirectToAction("uberuns", "startseite");
+            }
 
             #region Meta
 
@@ -152,7 +177,7 @@ namespace cerensoytuna.Controllers
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogTitle = "Dr. Ceren Ayözger | Hakkımızda";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerensoytuna.com/";
             ViewBag.Meta = meta;
@@ -165,10 +190,14 @@ namespace cerensoytuna.Controllers
         public IActionResult islemler(int? pageNumber)
         {
             string menuName = _localizationService.GetLocalizedHtmlString("TEDAVİLER");
-            
+
             if (menuName == "Treatments")
             {
-                return RedirectToAction("treatments","home");
+                return RedirectToAction("treatments", "home");
+            }
+            else if(menuName == "Behandlungen")
+            {
+                return RedirectToAction("behandlungen", "startseite");
             }
 
             ViewBag.TitlePage = "Tedaviler";
@@ -176,6 +205,7 @@ namespace cerensoytuna.Controllers
 
             ViewBag.LangEng = "İngilizce";
             ViewBag.LangTr = "Türkçe";
+            ViewBag.LangDe = "Almanca";
 
             #region Meta
 
@@ -186,7 +216,7 @@ namespace cerensoytuna.Controllers
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogTitle = "Dr. Ceren Ayözger | İşlemler";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerensoytuna.com/";
             ViewBag.Meta = meta;
@@ -205,9 +235,13 @@ namespace cerensoytuna.Controllers
         {
             string menuName = _localizationService.GetLocalizedHtmlString("DR. CEREN SOYTUNA");
 
-            if (menuName == "Dt. Ceren Ayözger")
+            if (menuName == "Drt. Ceren Ayözger")
             {
                 return RedirectToAction("ourdoctor", "home");
+            }
+            else if(menuName == "Dtr. Ceren Ayözger")
+            {
+                return RedirectToAction("unserarzt");
             }
 
             #region Meta
@@ -219,7 +253,7 @@ namespace cerensoytuna.Controllers
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogTitle = "Dr. Ceren Ayözger | Doktorumuz";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerensoytuna.com/";
             ViewBag.Meta = meta;
@@ -241,7 +275,7 @@ namespace cerensoytuna.Controllers
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogTitle = "Dr. Ceren Ayözger | Gizlilik";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerensoytuna.com/";
             ViewBag.Meta = meta;
@@ -263,7 +297,7 @@ namespace cerensoytuna.Controllers
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogTitle = "Dr. Ceren Ayözger | Çerez Politikaları";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerensoytuna.com/";
             ViewBag.Meta = meta;
@@ -274,7 +308,7 @@ namespace cerensoytuna.Controllers
         }
 
         [HttpGet("islem/{Id}/{Title}", Name = "islem")]
-        [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)] 
+        [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
         public IActionResult islem(int Id, string Title)
         {
 
@@ -360,37 +394,99 @@ namespace cerensoytuna.Controllers
         [HttpPost]
         public async Task<IActionResult> FormGonderIletisim(EmailSenderViewModel model)
         {
+            string result = "";
+            var captchaImage = Request.Form["g-recaptcha-response"].ToString();
+
+            string secretKey = _configuration["ReCaptchaSettings:SecretKey"];
+            string verificationUrl = _configuration["ReCaptchaSettings:VerificationUrl"];
+            bool isValid = await RecaptchaService.verifyRecaptchaV3(captchaImage, secretKey, verificationUrl);
+
             try
             {
-                string messages = model.content;
-                var message = new Message()
+
+                if (string.IsNullOrEmpty(captchaImage))
                 {
-                    To = "info@drcerenayozger.com",
-                    Subject = "Başvuru - Dr. Ceren Ayözger",
-                    Phone = model.phone,
-                    Email = model.email,
-                    NameSurname = model.namesurname,
-                    Content = $@"<p>{model.namesurname} iletişim formunu doldurdu. (Bu form https://drcerenayozger.com/iletisim üzerinden gelmiştir.) <p> <hr/> <p>Email Adresi: {model.email}</p> <hr/>  <p>Telefon: {model.phone}</p> <hr/> <p>{messages}</p> <hr/>",
-                };
+                    result = "Lütfen sizin robot olup olmadığınızı anlamamız için 'Google reCaptcha' doğrulamasını doldurun";
+                    return RedirectToAction("sonuc", "anasayfa", new { result = result, type = 2 });
+                }
+                else
+                {
+                    //var verified = await CheckCaptcha();
 
-                await _emailSender.SendEmailAsync(message);
-                string result = "Başvuru formu başarıyla dolduruldu! Sizinle en kısa sürede iletişime geçeceğiz";
+                    if (!isValid)
+                    {
+                        result = "Kullanıcı olduğunuz doğrulanmadı! Lütfen 'Google reCaptcha' doğrulamasını kullanarak tekrar deneyiniz";
+                        return RedirectToAction("sonuc", "anasayfa", new { result = result, type = 2 });
+                    }
 
-                return RedirectToAction("sonuc", "anasayfa", new { result = result, type = 1 });
+                    else if (isValid)
+                    {
+
+                        string messages = model.content;
+                        var message = new Message()
+                        {
+                            To = "info@drcerenayozger.com",
+                            Subject = "Başvuru - Dr. Ceren Ayözger",
+                            Phone = model.phone,
+                            Email = model.email,
+                            NameSurname = model.namesurname,
+                            Content = $@"<p>{model.namesurname} iletişim formunu doldurdu. (Bu form https://drcerenayozger.com/iletisim üzerinden gelmiştir.) <p> <hr/> <p>Email Adresi: {model.email}</p> <hr/>  <p>Telefon: {model.phone}</p> <hr/> <p>{messages}</p> <hr/>",
+                        };
+
+                        await _emailSender.SendEmailAsync(message);
+                        result = "Başvuru formu başarıyla dolduruldu! Sizinle en kısa sürede iletişime geçeceğiz";
+
+                        return RedirectToAction("sonuc", "anasayfa", new { result = result, type = 1 });
+                    }
+                    else
+                    {
+                        result = "Kullanıcı olduğunuz doğrulanmadı! Lütfen 'Google reCaptcha' doğrulamasını kullanarak tekrar deneyiniz";
+                    }
+                    return RedirectToAction("sonuc", "anasayfa", new { result = result, type = 2 });
+
+                }
 
             }
             catch (Exception ex)
             {
-                string result = "Mail gönderilirken bir hata oluştu!";
+                result = "Mail gönderilirken bir hata oluştu!";
                 return RedirectToAction("sonuc", "anasayfa", new { result = result, type = 0 });
             }
 
         }
 
+        //public async Task<bool> CheckCaptcha()
+        //{
+        //    var postData = new List<KeyValuePair<string, string>>()
+        //    {
+        //        new KeyValuePair<string, string>("secret", "6LfC68wqAAAAAErHNi-uxeFNh8sRLwW5xdWUBtax"),
+        //        new KeyValuePair<string, string>("response", HttpContext.Request.Form["g-recaptcha-response"])
+        //    };
+
+        //    var client = new HttpClient();
+        //    var response = await client.PostAsync("https://www.google.com/recaptcha/api/siteverify", new FormUrlEncodedContent(postData));
+        //    var o = (JObject)JsonConvert.DeserializeObject(await response.Content.ReadAsStringAsync());
+
+        //    return (bool)o["success"];
+
+        //}
+
         #endregion
 
         public IActionResult sonuc(string result, int type)
         {
+
+            string menuName = _localizationService.GetLocalizedHtmlString("SONUC");
+
+            if (menuName == "Result")
+            {
+                return RedirectToAction("result", "anasayfa");
+            }
+            else if (menuName == "Ergebnis")
+            {
+                return RedirectToAction("ergebnis", "startseite");
+            }
+
             ViewBag.Result = result;
             ViewBag.Type = type;
 
@@ -398,12 +494,12 @@ namespace cerensoytuna.Controllers
 
             MetaViewModel meta = new MetaViewModel();
 
-            meta.Title = "Çerez Politikası";
+            meta.Title = "Sonuç";
             meta.Keywords = "Çocuk, Klinik, Ayözger, Dentist, Bakım";
             meta.Description = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.ogDescription = "Çocuk Hastalıkları ve Sağlığı Klinik Merkezi";
-            meta.ogTitle = "Dr. Ceren Ayözger | Doktor & Dişçi";
+            meta.ogTitle = "Dr. Ceren Ayözger | Sonuç";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;

@@ -118,237 +118,240 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="A-1" xml:space="preserve">
-    <value>Güvenilir</value>
+    <value>Vertrauenswürdig</value>
   </data>
   <data name="A-2" xml:space="preserve">
-    <value>Deneyimli</value>
+    <value>Erfahren</value>
   </data>
   <data name="A-3" xml:space="preserve">
-    <value>Kaliteli</value>
+    <value>Qualität</value>
   </data>
   <data name="About Title" xml:space="preserve">
-    <value>Hakkımızda</value>
+    <value>Über uns</value>
   </data>
   <data name="Adresimiz" xml:space="preserve">
-    <value>Adresimiz</value>
+    <value>Adresse</value>
   </data>
   <data name="Adınız Soyadınız" xml:space="preserve">
-    <value>Adınız Soyadınız*</value>
+    <value>Name Nachname*</value>
   </data>
   <data name="ANA SAYFA" xml:space="preserve">
-    <value>Ana Sayfa</value>
+    <value>Startseite</value>
   </data>
   <data name="Bir şeyler arayın..." xml:space="preserve">
-    <value>Bir şeyler arayın...</value>
+    <value>Suche nach etwas...</value>
   </data>
   <data name="Bize Mesajınızı Bırakın" xml:space="preserve">
-    <value>Bize Mesajınızı Bırakın</value>
+    <value>Hinterlassen Sie uns Ihre Nachricht</value>
   </data>
   <data name="BUTTON Contact" xml:space="preserve">
-    <value>İletişime Geçin</value>
+    <value>Kontaktieren Sie uns</value>
   </data>
   <data name="C-1" xml:space="preserve">
-    <value>Çocukların ve ailelerinin yüzünü güldürüyoruz</value>
+    <value>Kindern und ihren Familien ein Lächeln ins Gesicht zaubern</value>
   </data>
   <data name="C-2" xml:space="preserve">
-    <value>15 yıl tecrübeli uzman doktorumuz ile profesyonel ekibimiz birleşti</value>
+    <value>Unser professionelles Team hat sich mit unserem 15-jährigen erfahrenen Facharzt zusammengeschlossen.</value>
   </data>
   <data name="C-3" xml:space="preserve">
-    <value>Çocuğunuzun tedavisini en kaliteli malzemelerle gerçekleştiriyoruz</value>
+    <value>Wir behandeln Ihr Kind mit den hochwertigsten Materialien.</value>
   </data>
   <data name="Child Best" xml:space="preserve">
-    <value>Ağız ve Diş Sağlığı İçin</value>
+    <value>Für Zahn- und Mundgesundheit</value>
   </data>
   <data name="Clinic" xml:space="preserve">
-    <value>Kliniğimizden</value>
+    <value>Aus unserer Klinik</value>
   </data>
   <data name="Contact Info Title" xml:space="preserve">
-    <value>İletişime Geçin</value>
+    <value>Kontaktieren Sie uns</value>
   </data>
   <data name="Content Info" xml:space="preserve">
-    <value>Çocuk Diş Hekimliği alanında uzman Doktor Ceren Ayözgerile çocuğunuzun sağlığı emin ellerde. Çocuğunuzun ağız ve diş tedavisi hakkında bilgi almak ve randevu oluşturmak için bizimle iletişime geçin.</value>
+    <value>"Die Gesundheit Ihres Kindes ist in sicheren Händen bei Dr. Ceren Ayözger, einer Expertin für Kinderzahnheilkunde. Kontaktieren Sie uns, um Informationen über die Zahn- und Mundbehandlung Ihres Kindes zu erhalten und einen Termin zu vereinbaren.</value>
   </data>
   <data name="DR. CEREN SOYTUNA" xml:space="preserve">
-    <value>Dr. Ceren Ayözger</value>
+    <value>Dtr. Ceren Ayözger</value>
   </data>
   <data name="Education" xml:space="preserve">
-    <value>Eğitim</value>
+    <value>Bildung</value>
   </data>
   <data name="Email Adresimiz" xml:space="preserve">
-    <value>Email Adresi</value>
+    <value>E-Mail-Adresse</value>
   </data>
   <data name="Email Adresiniz" xml:space="preserve">
-    <value>Email Adresiniz*</value>
+    <value>E-Mail-Adresse*</value>
   </data>
   <data name="End" xml:space="preserve">
-    <value>Bitiş</value>
-  </data>
-  <data name="Enrol Your Child" xml:space="preserve">
-    <value>Hemen Randevu Alın</value>
+    <value>Ende</value>
   </data>
   <data name="Experiements" xml:space="preserve">
-    <value>İş Deneyimi</value>
+    <value>Berufserfahrung</value>
   </data>
   <data name="Faydalı" xml:space="preserve">
-    <value>Faydalı Bilgiler</value>
+    <value>Nützliche Informationen</value>
   </data>
   <data name="Faydalı 1" xml:space="preserve">
-    <value>Her sabah ve akşam diş fırçalamayı rutin hale getirin</value>
+    <value>Mach es zur Gewohnheit, deine Zähne jeden Morgen und Abend zu putzen.</value>
   </data>
   <data name="Faydalı 2" xml:space="preserve">
-    <value>Çocuklarınıza diş fırçalama ve diş ipi kullanma konusunda örnek olun</value>
+    <value>Geben Sie Ihren Kindern ein Beispiel beim Zähneputzen und Zahnseide benutzen.</value>
   </data>
   <data name="Faydalı 3" xml:space="preserve">
-    <value>Düzenli diş hekimi muayenelerini ihmal etmeyin</value>
+    <value>Vernachlässigen Sie keine regelmäßigen Zahnuntersuchungen.</value>
   </data>
   <data name="Faydalı 4" xml:space="preserve">
-    <value>Şekerli içeceklerden mümkün olduğunca kaçının</value>
+    <value>Vermeiden Sie zuckerhaltige Getränke so weit wie möglich.</value>
   </data>
   <data name="Faydalı Metin" xml:space="preserve">
-    <value>Çocuklarınızın ağız ve diş sağlığı için bazı yararlı bilgiler</value>
+    <value>Einige nützliche Informationen für die Zahn- und Mundgesundheit Ihrer Kinder</value>
   </data>
   <data name="Faydalı Title" xml:space="preserve">
-    <value>Çocuklarınız için en iyisi</value>
+    <value>Das Beste für Ihre Kinder</value>
   </data>
   <data name="FOOTER BASLIK 1" xml:space="preserve">
-    <value>Hızlı Menü</value>
+    <value>Schnellmenü</value>
   </data>
   <data name="FOOTER BASLIK 2" xml:space="preserve">
-    <value>İletişim</value>
+    <value>Kontakt</value>
   </data>
   <data name="FOOTER BASLIK 3" xml:space="preserve">
-    <value>Haberdar Ol</value>
+    <value>Jetzt abonnieren</value>
   </data>
   <data name="FOOTER BUTTON" xml:space="preserve">
-    <value>Gönder</value>
+    <value>ABSENDEN</value>
   </data>
   <data name="FOOTER COPY TEXT" xml:space="preserve">
-    <value>Tüm Hakları Saklıdır</value>
+    <value>Alle Rechte vorbehalten.</value>
   </data>
   <data name="FOOTER INPUT TEXT" xml:space="preserve">
-    <value>Email Adresinizi giriniz</value>
+    <value>Geben Sie die E-Mail-Adresse ein</value>
   </data>
   <data name="FOOTER METIN" xml:space="preserve">
-    <value>Rahat hissetmeleri için özel olarak tasarladığımız kliniğimize bütün çocuklarımızı bekliyoruz</value>
+    <value>Wir laden jedes Kind in unsere Klinik ein, die speziell für unsere Kinder gestaltet wurde.</value>
   </data>
   <data name="FOOTER METIN 2" xml:space="preserve">
-    <value>Doktorumuza danışmak için bize aşağıda yer alan bilgilerden ulaşabilirsiniz.</value>
+    <value>Um unseren Arzt zu konsultieren, können Sie uns über die untenstehenden Informationen erreichen.</value>
   </data>
   <data name="Form Doldur" xml:space="preserve">
-    <value>Formu Doldurun</value>
+    <value>Füllen Sie das Formular aus</value>
   </data>
   <data name="Gallery" xml:space="preserve">
-    <value>Galeri</value>
+    <value>Galerie</value>
   </data>
   <data name="GİZLİLİK POLİTİKASI" xml:space="preserve">
-    <value>Gizlilik Politikası</value>
+    <value>Datenschutzerklärung</value>
   </data>
   <data name="Happy" xml:space="preserve">
-    <value>Çocuklarınız Kliniğimizde Mutlu</value>
+    <value>Ihre Kinder sind glücklich mit unserer Klinik</value>
+  </data>
+  <data name="Hemen Randevu Alın" xml:space="preserve">
+    <value>Vereinbaren Sie jetzt einen Termin</value>
   </data>
   <data name="Information Title" xml:space="preserve">
-    <value>Bilgi almak için</value>
+    <value>Für Informationen</value>
   </data>
   <data name="Islemler" xml:space="preserve">
-    <value>Tedavilerimiz</value>
+    <value>Behandlungen</value>
   </data>
   <data name="Join With Kidko" xml:space="preserve">
-    <value>Çocuğunuzun diş tedavisi için</value>
+    <value>Für die Zahnbehandlung Ihres Kindes</value>
   </data>
   <data name="Kidko Button" xml:space="preserve">
-    <value>Randevu Al</value>
+    <value>Vereinbaren Sie einen Termin</value>
   </data>
   <data name="KLİNİĞİMİZ" xml:space="preserve">
-    <value>Kliniğimiz</value>
+    <value>Unsere Klinik</value>
   </data>
   <data name="Konu" xml:space="preserve">
-    <value>Konu</value>
+    <value>Betreff</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>Konum</value>
+    <value>Standort</value>
   </data>
   <data name="Mesajınız" xml:space="preserve">
-    <value>Mesajınız</value>
+    <value>Ihre Nachricht</value>
   </data>
   <data name="Phone Doctor" xml:space="preserve">
     <value>Telefon</value>
   </data>
   <data name="Post" xml:space="preserve">
-    <value>Yazı</value>
+    <value>Post</value>
   </data>
   <data name="RANDEVU" xml:space="preserve">
-    <value>Randevu Al</value>
+    <value>Einen Termin vereinbaren</value>
   </data>
   <data name="Randevu Alın" xml:space="preserve">
-    <value>Randevu Alın</value>
+    <value>Einen Termin vereinbaren</value>
   </data>
   <data name="Send Form" xml:space="preserve">
-    <value>Gönder</value>
+    <value>Formular absenden</value>
   </data>
   <data name="Slider Button" xml:space="preserve">
-    <value>İletişime Geçin</value>
+    <value>Jetzt buchen</value>
   </data>
   <data name="Slider Text" xml:space="preserve">
-    <value>Çocuğunuzun sağlığı için yanınızda</value>
+    <value>Für die Gesundheit Ihres Kindes</value>
+  </data>
+  <data name="SONUC" xml:space="preserve">
+    <value>Ergebnis</value>
   </data>
   <data name="Spot" xml:space="preserve">
-    <value>Çocuğunuzun ağız ve diş sağlığı emin ellerde</value>
+    <value>Die Zahn- und Mundgesundheit Ihres Kindes ist in sicheren Händen</value>
   </data>
   <data name="SSS BASLIK 1" xml:space="preserve">
-    <value>Süt dişleri neden çabuk çürür? </value>
+    <value>Warum verfallen Milchzähne schnell?</value>
   </data>
   <data name="SSS BASLIK 2" xml:space="preserve">
-    <value>Çocuklar için nasıl bir diş fırçası seçilmelidir?</value>
+    <value>Welche Art von Zahn sollten Sie für Kinder wählen?</value>
   </data>
   <data name="SSS BASLIK 3" xml:space="preserve">
-    <value>Yer tutucular ne işe yarar?</value>
+    <value>Was machen Platzhalter?</value>
   </data>
   <data name="SSS METIN 1" xml:space="preserve">
-    <value>Süt dişleri normal dişlere göre daha fazla organik madde içerir bu yüzden süt dişleri daha hızlı çürüyebilmektedir.</value>
+    <value>Milchzähne enthalten mehr organisches Material als normale Zähne, daher können Milchzähne schneller verfallen.</value>
   </data>
   <data name="SSS METIN 2" xml:space="preserve">
-    <value>Küçük, seyrek kıllı ve orta sertlikte bir diş fırçası kullanılmalıdır.</value>
+    <value>Es sollte eine kleine, sparsame Bürste und eine mittelharte Zahnbürste verwendet werden.</value>
   </data>
   <data name="SSS METIN 3" xml:space="preserve">
-    <value>Yer tutucular, tek diş kayıplarında eksik dişin yerini korumak için yapılır. Arka dişe band ve bu banda lehimli U büküm öndeki dişe dayanan sabit apareylerdir.</value>
+    <value>Platzhalter werden hergestellt, um den fehlenden Zahn bei Verlust eines einzelnen Zahns zu schützen. Ein Band auf dem Backenzahn und ein U-Bogen, der an diesem Band gelötet ist, sind feste Apparaturen, die auf dem Vorderzahn basieren.</value>
   </data>
   <data name="SSS Title" xml:space="preserve">
-    <value>Sıkça Sorulan Sorular</value>
+    <value>Häufig gestellte Fragen</value>
   </data>
   <data name="SSS Title Short" xml:space="preserve">
-    <value>SSS</value>
+    <value>HGF</value>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>Başlangıç</value>
+    <value>Start</value>
   </data>
   <data name="TEDAVİLER" xml:space="preserve">
-    <value>Tedaviler</value>
+    <value>Behandlungen</value>
   </data>
   <data name="Telefon" xml:space="preserve">
-    <value>Telefon</value>
+    <value>Telefonnummer</value>
   </data>
   <data name="Telefon No" xml:space="preserve">
-    <value>Telefon Numarası</value>
+    <value>Telefonnummer</value>
   </data>
   <data name="Testimonial" xml:space="preserve">
-    <value>Hasta Yorumları</value>
+    <value>Bewertungen</value>
   </data>
   <data name="Testimonial-1" xml:space="preserve">
-    <value>8 yaşındaki kızımı ani başlayan diş ağrısı nedeniyle tavsiye üzerine kendisine muayeneye götürdüm. Titiz çalışması, bilgisi ile kızımda gerçekleştirmiş olduğu tedavinin yanı sıra mükemmel iletişimi ile kızımda diş hekimi korkusunu yenmesini de sağladı. O kadar ki korkudan daha kapıda ağlayan kızım evde diş hekimi kontrolü için abisini ikna etmeye çalışıyor :) . Kendisine tekrar teşekkür eder, Ceren Hoca'yı şiddetle tavsiye ederim.</value>
+    <value>Ich habe meine 8-jährige Tochter aufgrund starker Schmerzen auf Empfehlung zu einer Untersuchung gebracht. Dr. Ayözger half meiner Tochter, die Angst vor dem Zahnarzt mit ihrem umfassenden Wissen und ihrer detaillierten Arbeit zu überwinden. Meine Tochter, die früher schon vor dem Verlassen des Hauses zu weinen begann, versucht jetzt, ihren Bruder von einem Zahnarztbesuch zu überzeugen :). Ich danke ihr noch einmal und empfehle Dr. Ceren Ayözger uneingeschränkt weiter.</value>
   </data>
   <data name="Text Kidko 1" xml:space="preserve">
-    <value>Çocukların rahat hissetmesi için özel olarak tasarlanmış</value>
+    <value>Speziell für Kinder gestaltet, damit sie sich wohlfühlen</value>
   </data>
   <data name="Text Kidko 2" xml:space="preserve">
-    <value>kliniğimizde sizlere hizmet vermeyi dört gözle bekliyoruz</value>
+    <value>Wir freuen uns darauf, Sie in unserer Klinik zu betreuen.</value>
   </data>
   <data name="Videos" xml:space="preserve">
-    <value>Videolar</value>
+    <value>Videos</value>
   </data>
   <data name="ÇEREZ POLİTİKASI" xml:space="preserve">
-    <value>Çerez Politikası</value>
+    <value>Cookie-Richtlinie</value>
   </data>
   <data name="İLETİŞİM" xml:space="preserve">
-    <value>İletişim</value>
+    <value>Kontaktieren Sie uns</value>
   </data>
 </root>

@@ -169,7 +169,7 @@
     <value>Your child's health is in safe hands with Doctor Ceren Ayözger an expert in Pediatric Dentistry. Contact us to get information about your child's oral and dental treatment and to make an appointment.</value>
   </data>
   <data name="DR. CEREN SOYTUNA" xml:space="preserve">
-    <value>Dr. Ceren Ayözger</value>
+    <value>Drt. Ceren Ayözger</value>
   </data>
   <data name="Education" xml:space="preserve">
     <value>Education</value>
@@ -291,6 +291,9 @@
   <data name="Slider Text" xml:space="preserve">
     <value>For your child's health</value>
   </data>
+  <data name="SONUC" xml:space="preserve">
+    <value>Result</value>
+  </data>
   <data name="Spot" xml:space="preserve">
     <value>Your child's oral and dental health is in safe hands</value>
   </data>
@@ -342,6 +345,9 @@
   </data>
   <data name="Text Kidko 2" xml:space="preserve">
     <value>We look forward to serving you in our clinic.</value>
+  </data>
+  <data name="Videos" xml:space="preserve">
+    <value>Videos</value>
   </data>
   <data name="ÇEREZ POLİTİKASI" xml:space="preserve">
     <value>Cookie Policy</value>

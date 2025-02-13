@@ -9,5 +9,6 @@ namespace cerensoytuna.editor.Models.PostModel.PostLanguage
     {
         public string PostTrTitle { get; set; }
         public string PostEngTitle { get; set; }
+        public string PostDeuTitle { get; set; }
     }
 }

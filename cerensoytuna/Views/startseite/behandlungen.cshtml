@@ -2,7 +2,7 @@
 @using cerensoytuna.Resource
 @inject LocalizationService localizationService
 @{
-    ViewData["Title"] = "Treatments";
+    ViewData["Title"] = "islemler";
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     List<PostListViewModel> post = ViewBag.Gonderiler as List<PostListViewModel>;
@@ -35,8 +35,8 @@
 <!-- news-section -->
 <section class="news-section blog-page-section" style="padding-top:68px;">
     @*<div class="sec-title centred">
-            <h5><a href="@Url.Action("treatments","anasayfa")">@ViewBag.LangEng</a> | <a href="@Url.Action("islemler","anasayfa")">@ViewBag.LangTr</a></h5>
-        </div>*@
+    <h5><a href="@Url.Action("treatments","anasayfa")">@ViewBag.LangEng</a> | <a href="@Url.Action("islemler","anasayfa")">@ViewBag.LangTr</a></h5>
+    </div>*@
     <div class="container">
         <div class="row">
             @foreach (var item in post)
@@ -44,15 +44,15 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                     <div class="news-block-one wow fadeInUp" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div class="inner-box">
-                            <figure class="image-box"><a href="@Url.Action("treatment","home", new { Id = item.Id, Title = item.GenerateSlug() })"><img style="height:250px; object-fit:cover" src="https://uploads.drcerensoytuna.com/images/@item.Image" alt="@item.Image"></a></figure>
+                            <figure class="image-box"><a href="@Url.Action("behandlung","startseite", new { Id = item.Id, Title = item.GenerateSlug() })"><img style="height:250px; object-fit:cover" src="https://uploads.drcerensoytuna.com/images/@item.Image" alt="@item.Image"></a></figure>
                             <div class="lower-content">
                                 @if (item.Title.Length > 70)
                                 {
-                                    <h3><a href="@Url.Action("treatment","home", new { Id = item.Id, Title = item.GenerateSlug() })">@item.Title.Substring(0, 70)</a></h3>
+                                    <h3><a href="@Url.Action("behandlung","startseite", new { Id = item.Id, Title = item.GenerateSlug() })">@item.Title.Substring(0, 70)</a></h3>
                                 }
                                 else
                                 {
-                                    <h3><a href="@Url.Action("treatment","home", new { Id = item.Id, Title = item.GenerateSlug() })">@item.Title</a></h3>
+                                    <h3><a href="@Url.Action("behandlung","startseite", new { Id = item.Id, Title = item.GenerateSlug() })">@item.Title</a></h3>
                                 }
                                 @if (item.Spot.Length > 100)
                                 {
@@ -64,8 +64,8 @@
                                     <div class="text">@item.Spot</div>
 
                                 }
-                                <div class="link-btn"><a href="@Url.Action("treatment","home", new { Id = item.Id, Title = item.GenerateSlug() })"><i class="flaticon-next"></i></a></div>
-                                <div class="more-btn"><a href="@Url.Action("treatment","home", new { Id = item.Id, Title = item.GenerateSlug() })" class="theme-btn">More</a></div>
+                                <div class="link-btn"><a href="@Url.Action("behandlung","startseite", new { Id = item.Id, Title = item.GenerateSlug() })"><i class="flaticon-next"></i></a></div>
+                                <div class="more-btn"><a href="@Url.Action("behandlung","startseite", new { Id = item.Id, Title = item.GenerateSlug() })" class="theme-btn">More</a></div>
                             </div>
                         </div>
                     </div>

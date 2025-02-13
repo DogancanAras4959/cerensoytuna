@@ -15,7 +15,7 @@ namespace cerensoytuna.Core
                 return false;
 
             var culture = values["lang"].ToString();
-            return culture == "tr" || culture == "en";
+            return culture == "tr" || culture == "en" || culture == "de";
         }
     }
 }

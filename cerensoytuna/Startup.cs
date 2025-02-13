@@ -73,7 +73,8 @@ namespace cerensoytuna
                 var supportedCultures = new[]
                 {
                     new CultureInfo("en"),
-                    new CultureInfo("tr")
+                    new CultureInfo("tr"),
+                    new CultureInfo("de")
                 };
                 options.DefaultRequestCulture = new RequestCulture("tr");
                 options.SupportedCultures = supportedCultures;
@@ -141,6 +142,9 @@ namespace cerensoytuna
                 name: "treatment",
                 pattern: "/treatment/{Id}/{Title}", new { controller = "home", action = "treatment" });
 
+                endpoints.MapControllerRoute(
+                name: "behandlung",
+                pattern: "/behandlung/{Id}/{Title}", new { controller = "startseite", action = "behandlung" });
             });
         }
     }

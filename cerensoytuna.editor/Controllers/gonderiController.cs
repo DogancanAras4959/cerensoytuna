@@ -75,6 +75,9 @@ namespace cerensoytuna.editor.Controllers
                 var newListToLanguageEng = _mapper.Map<List<PostListItemDto>, List<PostListItemModel>>(_newService.PostListWithWebEng());
                 ViewBag.SelectLanguageEng = new SelectList(newListToLanguageEng, "Id", "Title");
 
+                var newListToLanguageDeu = _mapper.Map<List<PostListItemDto>, List<PostListItemModel>>(_newService.PostListWithWebDeu());
+                ViewBag.SelectLanguageDeu = new SelectList(newListToLanguageDeu, "Id", "Title");
+
                 if (searchstring != "" && searchstring != null)
                 {
                     haberlist = _mapper.Map<List<PostListItemDto>, List<PostListItemModel>>(_newService.searchDataInPost(searchstring));
@@ -87,7 +90,7 @@ namespace cerensoytuna.editor.Controllers
             catch (Exception ex)
             {
                 TempData["HataMesaji"] = ex.ToString();
-                return RedirectToAction("hata", "yonetim");
+                return Redirect("/yonetim/hata");
             }
 
         }
@@ -104,7 +107,7 @@ namespace cerensoytuna.editor.Controllers
             catch (Exception ex)
             {
                 TempData["HataMesaji"] = ex.ToString();
-                return RedirectToAction("hata", "yonetim");
+                return Redirect("/yonetim/hata");
             }
         }
 
@@ -180,7 +183,7 @@ namespace cerensoytuna.editor.Controllers
             catch (Exception ex)
             {
                 TempData["HataMesajı"] = ex.ToString();
-                return RedirectToAction("hata", "yonetim");
+                return Redirect("/yonetim/hata");
             }
         }
 
@@ -248,7 +251,7 @@ namespace cerensoytuna.editor.Controllers
             catch (Exception ex)
             {
                 TempData["HataMesaji"] = ex.ToString();
-                return RedirectToAction("hata", "yonetim");
+                return Redirect("/yonetim/hata");
             }
 
         }
@@ -330,7 +333,7 @@ namespace cerensoytuna.editor.Controllers
             catch (Exception ex)
             {
                 TempData["HataMesaji"] = ex.ToString();
-                return RedirectToAction("hata", "yonetim");
+                return Redirect("/yonetim/hata");
             }
         }
 
@@ -471,6 +474,11 @@ namespace cerensoytuna.editor.Controllers
                     getLanguageSyncNews.PostEngTitle = selectedNews.Title;
                     int resultId = Convert.ToInt32(await _newService.editPostLanguageEn(_mapper.Map<EditPostLanguageViewModel, PostLanguageDto>(getLanguageSyncNews)));
                 }
+                else if (news.LangId == 3)
+                {
+                    getLanguageSyncNews.PostDeuTitle = selectedNews.Title;
+                    int resultId = Convert.ToInt32(await _newService.editPostLanguageDeu(_mapper.Map<EditPostLanguageViewModel, PostLanguageDto>(getLanguageSyncNews)));
+                }
                 return RedirectToAction("gonderiler", "gonderi");
 
             }
@@ -489,10 +497,15 @@ namespace cerensoytuna.editor.Controllers
                     modelPost.PostTrTitle = news.Title;
                     modelPost.PostEngTitle = selectedNews.Title;
                 }
+                else if(news.LangId == 3)
+                {
+                    modelPost.PostTrTitle = news.Title;
+                    modelPost.PostDeuTitle = selectedNews.Title;
+                }
 
                 int resultLanguageId = Convert.ToInt32(await _newService.insertLanguageSwitch(_mapper.Map<CreatePostLanguageViewModel, PostLanguageDto>(modelPost)));
 
-                return RedirectToAction("gonderiler", "gonderi");
+                return resultLanguageId > 0 ? RedirectToAction("gonderiler", "gonderi") : RedirectToAction("hata","yonetim");
             }
         }
         #endregion

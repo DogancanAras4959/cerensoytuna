@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using cerensoytuna.DAL;
 
 namespace cerensoytuna.DAL.Migrations
 {
     [DbContext(typeof(cerensoytunadbcontext))]
-    partial class cerensoytunadbcontextModelSnapshot : ModelSnapshot
+    [Migration("20250212131138_deu-lang-insert")]
+    partial class deulanginsert
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

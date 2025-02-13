@@ -629,6 +629,8 @@ namespace cerensoytuna.ENGINES.Engines
                 return null;
             }
         }
+
+        #region Post With Language
         public List<PostListItemDto> PostListWithWeb()
         {
             IEnumerable<Post> PostList = _unitOfWork.GetRepository<Post>().Where(x => x.IsActive == true && x.LangId == 2, x => x.OrderBy(y => y.PublishedTime), null, null, null);
@@ -695,6 +697,43 @@ namespace cerensoytuna.ENGINES.Engines
                 return null;
             }
         }
+        public List<PostListItemDto> PostListWithWebDeu()
+        {
+            IEnumerable<Post> PostList = _unitOfWork.GetRepository<Post>().Where(x => x.IsActive == true && x.LangId == 1, x => x.OrderBy(y => y.PublishedTime), null, null, null);
+
+            if (PostList != null)
+            {
+                return PostList.Select(x => new PostListItemDto
+                {
+
+                    Id = x.Id,
+                    Title = x.Title,
+                    Spot = x.Spot,
+                    Image = x.Image,
+                    VideoSlug = x.VideoSlug,
+                    PostContent = x.PostContent,
+                    IsActive = x.IsActive,
+                    LangId = x.LangId,
+                    MetaDescription = x.MetaDescription,
+                    UpdatedTime = x.UpdatedTime,
+                    CreatedTime = x.CreatedTime,
+                    PublishTypeId = x.PublishTypeId,
+                    PublishedTime = x.PublishedTime,
+                    IsCommentActive = x.IsCommentActive,
+                    Sorted = x.Sorted,
+                    publishtype = x.publishtype,
+
+                }).ToList();
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        #endregion
+
+
         public async Task<bool> ChangeSorted(int id, int sira)
         {
             try
@@ -784,7 +823,8 @@ namespace cerensoytuna.ENGINES.Engines
                 PostLanguage createPost = await _unitOfWork.GetRepository<PostLanguage>().AddAsync(new PostLanguage
                 {
                    postEngTitle = model.PostEngTitle,
-                   postTrTitle = model.PostTrTitle
+                   postTrTitle = model.PostTrTitle,
+                   postDeuTitle= model.PostDeuTitle,
                 });
 
                 return createPost.Id;
@@ -825,6 +865,7 @@ namespace cerensoytuna.ENGINES.Engines
                     Id = model.Id,
                     postTrTitle = model.PostTrTitle,
                     postEngTitle = getPost.postEngTitle,
+                    postDeuTitle= model.PostDeuTitle,
                 });
 
                 return PostGet.Id;
@@ -846,6 +887,7 @@ namespace cerensoytuna.ENGINES.Engines
                     Id = model.Id,
                     postTrTitle = getPost.postTrTitle,
                     postEngTitle = model.PostEngTitle,
+                    postDeuTitle= model.PostDeuTitle,
                 });
 
                 return PostGet.Id;
@@ -856,7 +898,28 @@ namespace cerensoytuna.ENGINES.Engines
                 return 0;
             }
         }
+        public async Task<int> editPostLanguageDeu(PostLanguageDto model)
+        {
+            try
+            {
+                PostLanguage getPost = await _unitOfWork.GetRepository<PostLanguage>().FindAsync(x => x.Id == model.Id);
 
+                PostLanguage PostGet = await _unitOfWork.GetRepository<PostLanguage>().UpdateAsync(new PostLanguage
+                {
+                    Id = model.Id,
+                    postTrTitle = getPost.postTrTitle,
+                    postEngTitle = model.PostEngTitle,
+                    postDeuTitle = model.PostDeuTitle,
+                });
+
+                return PostGet.Id;
+
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
         public PostDto getPostToTitle(string Title)
         {
             Post getPost = _unitOfWork.GetRepository<Post>().Where(x => x.Title == Title, x => x.OrderBy(x => x.UpdatedTime), "publishtype", null, null).SingleOrDefault();

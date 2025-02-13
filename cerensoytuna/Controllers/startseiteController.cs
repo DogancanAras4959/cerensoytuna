@@ -1,34 +1,29 @@
 ﻿using AutoMapper;
 using cerensoytuna.COMMON.DTOS.PostDTO.PostLanguageDTO;
 using cerensoytuna.COMMON.Helpers;
-using cerensoytuna.COMMON.PostDTO;
 using cerensoytuna.COMMON.PostDTO.TagPostDTO;
+using cerensoytuna.COMMON.PostDTO;
 using cerensoytuna.ENGINES.Interface;
-using cerensoytuna.Models;
-using cerensoytuna.Models.PostLanguageModel;
 using cerensoytuna.Models.PostModel;
-using cerensoytuna.Models.TagPostModel;
+using cerensoytuna.Models;
 using cerensoytuna.Resource;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using System;
+using cerensoytuna.Models.TagPostModel;
+using cerensoytuna.Models.PostLanguageModel;
+using System.Linq;
 
 namespace cerensoytuna.Controllers
 {
-    public class homeController : Controller
+    public class startseiteController : Controller
     {
-
         private readonly LocalizationService _localizationService;
         private readonly IMapper _mapper;
         private readonly IPostService _postService;
         private readonly IEmailSender _emailSender;
-        public homeController(LocalizationService localizationService, IMapper mapper, IPostService postService, IEmailSender emailSender)
+        public startseiteController(LocalizationService localizationService, IMapper mapper, IPostService postService, IEmailSender emailSender)
         {
             _localizationService = localizationService;
             _mapper = mapper;
@@ -36,7 +31,7 @@ namespace cerensoytuna.Controllers
             _postService = postService;
         }
 
-        public IActionResult contact()
+        public IActionResult kontakt()
         {
             string menuName = _localizationService.GetLocalizedHtmlString("İLETİŞİM");
 
@@ -44,24 +39,23 @@ namespace cerensoytuna.Controllers
             {
                 return RedirectToAction("iletisim", "anasayfa");
             }
-            else if(menuName == "Kontaktieren Sie uns")
+            else if(menuName == "Contact")
             {
-                return RedirectToAction("kontakt", "startseite");
+                return RedirectToAction("contact", "anasayfa");
             }
 
             #region Meta
 
-            MetaViewModel meta = new()
-            {
-                Title = "Contact Us",
-                Keywords = "Child, Clinic, Ayözger, Dentist, Care",
-                Description = "Pediatric Diseases and Health Clinic",
-                Image = "https://uploads.drcerenayozger.com/site/logodr.png",
-                ogDescription = "Pediatric Diseases and Health Clinic",
-                ogTitle = "Dr. Ceren Ayözger | Contact",
-                ogImage = "https://uploads.drcerenayozger.com/site/logodr.png",
-                Url = "https://www.drcerenayozger.com/"
-            };
+            MetaViewModel meta = new MetaViewModel();
+
+            meta.Title = "Kontakt Üns";
+            meta.Keywords = "Kinder, Klinik, Ayözger, Zahnarzt, Pflege";
+            meta.Description = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.ogDescription = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.ogTitle = "Dr. Ceren Ayözger | Kontakt";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
@@ -69,7 +63,7 @@ namespace cerensoytuna.Controllers
             return View();
         }
 
-        public IActionResult booknow()
+        public IActionResult jetztbuchen()
         {
             string menuName = _localizationService.GetLocalizedHtmlString("RANDEVU");
 
@@ -77,26 +71,23 @@ namespace cerensoytuna.Controllers
             {
                 return RedirectToAction("randevual", "anasayfa");
             }
-
-            else if (menuName == "Einen Termin vereinbaren")
+            if (menuName == "Make An Appoinment")
             {
-                return RedirectToAction("jetztbuchen", "startseite");
+                return RedirectToAction("booknow", "home");
             }
-
 
             #region Meta
 
-            MetaViewModel meta = new()
-            {
-                Title = "Book Now",
-                Keywords = "Child, Clinic, Ayözger, Dentist, Care",
-                Description = "Pediatric Diseases and Health Clinic",
-                Image = "https://uploads.drcerenayozger.com/site/logodr.png",
-                ogDescription = "Pediatric Diseases and Health Clinic",
-                ogTitle = "Dr. Ceren Ayözger | Book Now",
-                ogImage = "https://uploads.drcerenayozger.com/site/logodr.png",
-                Url = "https://www.drcerenayozger.com/"
-            };
+            MetaViewModel meta = new MetaViewModel();
+
+            meta.Title = "Jetzt buchen";
+            meta.Keywords = "Kinder, Klinik, Ayözger, Zahnarzt, Pflege";
+            meta.Description = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.ogDescription = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.ogTitle = "Dr. Ceren Ayözger | Jetzt Buchen";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
@@ -104,7 +95,7 @@ namespace cerensoytuna.Controllers
             return View();
         }
 
-        public IActionResult aboutus()
+        public IActionResult uberuns()
         {
             string menuName = _localizationService.GetLocalizedHtmlString("KLİNİĞİMİZ");
 
@@ -112,25 +103,23 @@ namespace cerensoytuna.Controllers
             {
                 return RedirectToAction("hakkimizda", "anasayfa");
             }
-            else if (menuName == "Unsere Klinik")
+            else if(menuName == "Our Clinic")
             {
-                return RedirectToAction("uberuns", "startseite");
+                return RedirectToAction("aboutus", "home");
             }
-
 
             #region Meta
 
-            MetaViewModel meta = new()
-            {
-                Title = "About Us",
-                Keywords = "Child, Clinic, Ayözger, Dentist, Care",
-                Description = "Pediatric Diseases and Health Clinic",
-                Image = "https://uploads.drcerenayozger.com/site/logodr.png",
-                ogDescription = "Pediatric Diseases and Health Clinic",
-                ogTitle = "Dr. Ceren Ayözger | About Us",
-                ogImage = "https://uploads.drcerenayozger.com/site/logodr.png",
-                Url = "https://www.drcerenayozger.com/"
-            };
+            MetaViewModel meta = new MetaViewModel();
+
+            meta.Title = "Über uns";
+            meta.Keywords = "Kinder, Klinik, Ayözger, Zahnarzt, Pflege";
+            meta.Description = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.ogDescription = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.ogTitle = "Dr. Ceren Ayözger | Uber Üns";
+            meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
@@ -138,7 +127,7 @@ namespace cerensoytuna.Controllers
             return View();
         }
 
-        public IActionResult treatments(int? pageNumber)
+        public IActionResult behandlungen(int? pageNumber)
         {
 
             string menuName = _localizationService.GetLocalizedHtmlString("TEDAVİLER");
@@ -147,29 +136,28 @@ namespace cerensoytuna.Controllers
             {
                 return RedirectToAction("islemler", "anasayfa");
             }
-            else if (menuName == "Behandlungen")
+            else if(menuName == "Treatments")
             {
-                return RedirectToAction("behandlungen", "startseite");
+                return RedirectToAction("treatments", "home");
             }
 
-
-            ViewBag.TitlePage = "Treatments";
-            ViewBag.SubTitle = "Home";
+            ViewBag.TitlePage = "Behandlungen";
+            ViewBag.SubTitle = "Startseite";
 
             ViewBag.LangEng = "English";
             ViewBag.LangTr = "Turkish";
-            ViewBag.LangDe = "Germany";
+            ViewBag.LangDe = "Deutschland";
 
             #region Meta
 
             MetaViewModel meta = new MetaViewModel();
 
-            meta.Title = "Treatments";
-            meta.Keywords = "Child, Clinic, Ayözger, Dentist, Care";
-            meta.Description = "Pediatric Diseases and Health Clinic";
+            meta.Title = "Behandlungen";
+            meta.Keywords = "Kinder, Klinik, Ayözger, Zahnarzt, Pflege";
+            meta.Description = "Kinderkrankheiten und Gesundheitsklinik";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
-            meta.ogDescription = "Pediatric Diseases and Health Clinic";
-            meta.ogTitle = "Dr. Ceren Ayözger | Treatments";
+            meta.ogDescription = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.ogTitle = "Dr. Ceren Ayözger | Behandlungen";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
@@ -184,10 +172,9 @@ namespace cerensoytuna.Controllers
             return View();
         }
 
-
-        [HttpGet("treatment/{Id}/{Title}", Name = "treatment")]
+        [HttpGet("behandlung/{Id}/{Title}", Name = "behandlung")]
         [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
-        public IActionResult treatment(int Id, string Title)
+        public IActionResult behandlung(int Id, string Title)
         {
             var newsGet = _mapper.Map<PostDto, PostEditViewModel>(_postService.getPost(Id));
             string friendlyTitle = Title;
@@ -220,13 +207,13 @@ namespace cerensoytuna.Controllers
 
             if (!string.Equals(friendlyTitle, Title, StringComparison.Ordinal))
             {
-                return this.RedirectToRoutePermanent("treatment", new { id = Id, title = friendlyTitle });
+                return this.RedirectToRoutePermanent("behandlung", new { id = Id, title = friendlyTitle });
             }
 
             return View(newsGet);
         }
 
-        public IActionResult ourdoctor()
+        public IActionResult unserarzt()
         {
             string menuName = _localizationService.GetLocalizedHtmlString("DR. CEREN SOYTUNA");
 
@@ -234,54 +221,21 @@ namespace cerensoytuna.Controllers
             {
                 return RedirectToAction("doktorumuz", "anasayfa");
             }
-            else if(menuName == "Dtr. Ceren Ayözger")
+            else if(menuName == "Drt. Ceren Ayözger")
             {
-                return RedirectToAction("unserarzt", "home");
-            }
-
-            #region Meta
-
-            MetaViewModel meta = new()
-            {
-                Title = "Dt. Ceren Ayözger",
-                Keywords = "Child, Clinic, Ayözger, Dentist, Care",
-                Description = "Pediatric Diseases and Health Clinic",
-                Image = "https://uploads.drcerenayozger.com/site/logodr.png",
-                ogDescription = "Pediatric Diseases and Health Clinic",
-                ogTitle = "Dr. Ceren Ayözger | Our Doctor",
-                ogImage = "https://uploads.drcerenayozger.com/site/logodr.png",
-                Url = "https://www.drcerenayozger.com/"
-            };
-            ViewBag.Meta = meta;
-
-            #endregion
-
-            return View();
-        }
-
-        public IActionResult result()
-        {
-            string menuName = _localizationService.GetLocalizedHtmlString("SONUC");
-
-            if (menuName == "Sonuç")
-            {
-                return RedirectToAction("sonuc", "anasayfa");
-            }
-            else if(menuName == "Ergebnis")
-            {
-                return RedirectToAction("ergebnis", "startseite");
+                return RedirectToAction("ourdoctor", "home");
             }
 
             #region Meta
 
             MetaViewModel meta = new MetaViewModel();
 
-            meta.Title = "Result";
-            meta.Keywords = "Child, Clinic, Ayözger, Dentist, Care";
-            meta.Description = "Pediatric Diseases and Health Clinic";
+            meta.Title = "Dt. Ceren Ayözger";
+            meta.Keywords = "Kinder, Klinik, Ayözger, Zahnarzt, Pflege";
+            meta.Description = "Kinderkrankheiten und Gesundheitsklinik";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
-            meta.ogDescription = "Pediatric Diseases and Health Clinic";
-            meta.ogTitle = "Dr. Ceren Ayözger | Result";
+            meta.ogDescription = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.ogTitle = "Dr. Ceren Ayözger | Unser Arzt";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
             meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
@@ -291,33 +245,37 @@ namespace cerensoytuna.Controllers
             return View();
         }
 
-        /// <summary>
-        /// BURADA KALDIM ALMANCASINI VE TÜRKÇESİNİ SEÇİM İF ELSE YAPILACAK
-        /// </summary>
-        /// <returns></returns>
-
-        public IActionResult cookie()
+        public IActionResult ergebnis()
         {
+            string menuName = _localizationService.GetLocalizedHtmlString("SONUC");
+
+            if (menuName == "Sonuç")
+            {
+                return RedirectToAction("sonuc", "anasayfa");
+            }
+            else if(menuName == "Result")
+            {
+                return RedirectToAction("result", "home");
+            }
 
             #region Meta
 
             MetaViewModel meta = new MetaViewModel();
 
-            meta.Title = "Cookie Policy";
-            meta.Keywords = "Child, Clinic, Ayözger, Dentist, Care";
-            meta.Description = "Pediatric Diseases and Health Clinic";
+            meta.Title = "Ergebnis";
+            meta.Keywords = "Kinder, Klinik, Ayözger, Zahnarzt, Pflege";
+            meta.Description = "Kinderkrankheiten und Gesundheitsklinik";
             meta.Image = "https://uploads.drcerenayozger.com/site/logodr.png";
-            meta.ogDescription = "Pediatric Diseases and Health Clinic";
-            meta.ogTitle = "Dr. Ceren Ayözger | Cookie Policy";
+            meta.ogDescription = "Kinderkrankheiten und Gesundheitsklinik";
+            meta.ogTitle = "Dr. Ceren Ayözger | Ergebnis";
             meta.ogImage = "https://uploads.drcerenayozger.com/site/logodr.png";
-            meta.Url = "https://www.drcerensoytuna.com/";
+            meta.Url = "https://www.drcerenayozger.com/";
             ViewBag.Meta = meta;
 
             #endregion
 
             return View();
         }
-
 
         #region Content
         private static string HtmlToPlainText(string Title)

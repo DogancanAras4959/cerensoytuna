@@ -16,7 +16,8 @@ namespace cerensoytuna.Core
         private static readonly Dictionary<string, string> LanguageMap = new Dictionary<string, string>
         {
             { "tr", "tr-TR" },
-            { "en", "en-US" }
+            { "en", "en-US" },
+            { "de", "de-DE" }
         };
 
         public override Task<ProviderCultureResult> DetermineProviderCultureResult(HttpContext httpContext)
